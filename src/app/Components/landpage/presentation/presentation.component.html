@@ -1,0 +1,216 @@
+<nav class="nav-container" [ngStyle]="{'background-color':colorNavbar}">
+    <div class="realcontent">
+    <div class="logo-container">
+        <img routerLink="/" class="logo" src="../../../assets/Images/TMH-logo.png">
+    </div>
+    <div class="rutas-container">
+        <ul>
+            
+            <li routerLink="/aboutus" [ngStyle]="{'color':colorli,'border-color':colorli}"><span>01 </span> ¿Quienes Somos?</li>
+            <li routerLink="/pasos" [ngStyle]="{'color':colorli,'border-color':colorli}"><span>02 </span> Es simple</li>
+            <li routerLink="/beneficios" [ngStyle]="{'color':colorli,'border-color':colorli}"><span>03 </span> Beneficios</li>
+            <li routerLink="/comentarios" [ngStyle]="{'color':colorli,'border-color':colorli}"> <span>04 </span> Entérate</li>
+            <li routerLink="/footer" [ngStyle]="{'color':colorli,'border-color':colorli}"> <span>05 </span> Soporte</li>
+          
+        </ul>
+    </div>
+    <div class="btn-content">
+        <button routerLink="/entry" class="btn-login">Iniciar Sesión</button>
+    </div>
+  
+    </div>
+    <div class="content-bar">
+    <mat-progress-bar mode="indeterminate" class="barra" ></mat-progress-bar>
+    </div>
+</nav>
+<div class="total-presentation" #inicio>
+    <div class="secction-presentation">
+        <div class="texto-container">
+        <h1>¿Quieres algo del extranjero?</h1>
+        <br>
+        <h1>Un turista te lo traerá</h1>
+        </div>
+        <button routerLink="/entry" class="btn-start" mat-stroked-button color="primary">Empieza aquí</button>
+        <div class="arrow-content">
+            <p>Descubre más</p>
+            <button (click)="scroll(aboutus);cambiodeColorNavBarBlanco();cambiodeColorLiBlanco()">
+                <div class="arrow"></div>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+<div class="total-about" #aboutus>
+    <div class="secction-about">
+        <div class="titulo">
+            <div class="content-titulo">
+                <h2>Sobre Nosotros</h2>
+                <div class="line"></div>
+             </div>
+        </div>
+        <div class="description-content">
+            <div class="parrafo">
+                <h4>
+                    <b>TakeMeHome</b>, nuestra startup, es una aplicación disponible para todo tipo de dispositivo de forma web, que facilita la compra y entrega de productos de manera rápida y eficiente. A través de TakeMeHome una persona podrá hacer un pedido de algún paquete y será traído hacia él por medio de turistas que tienen planeado viajar a la localidad donde se encuentran, de este modo las personas podrán hacer compras en el exterior de manera más sencilla y el turista ganará dinero extra para su viaje.  
+                </h4>    
+            </div>
+            <div class="video">
+                <video src="../../../../assets/Images/WhatsApp Video 2022-09-23 at 6.19.06 PM.mp4" autoplay="true" loop="true"></video>
+            </div>
+        </div>
+    </div>
+    <div class="arrow-content flechaabout">
+        <p>Es muy sencillo</p>
+        <button (click)="scroll(pasos); cambiodeColorNavBarMorado();cambiodeColorLiMorado()">
+            <div class="arrow"></div>
+        </button>
+
+    </div>
+</div>
+<div id="si-eres" class="pasos-container" #pasos>
+    <div class="titulo">
+        <div class="content-titulo-pasos">
+            <h2>Pasos para hacerte parte</h2>
+            <div class="line-morado"></div>
+         </div>
+    </div>
+    <div class="listas-content">
+        <div class="lista-cliente">
+            <div class="cliente">
+                <ul>
+                    <li><b>01</b><div> Regístrate</div></li>
+                    <li><b>02</b><div>Registra tu pedido en la app</div></li>
+                    <li><b>03</b> <div>Espera a que un viajero te contacte</div></li>
+                    <li><b>04</b><div>Recibe tu pedido</div></li>
+                </ul>
+            </div>
+            <div class="foto-clientes">
+                <h3 class="cliente-texto">Cliente</h3>
+            </div>
+        </div>
+        <div class="lista-turista">
+            <div class="foto-turista">
+                <h3 class="turista-texto">Turistas</h3> 
+            </div>
+            <div class="turistas" >
+                <ul>
+                    <li><b>01</b><div> Regístrate</div></li>
+                    <li><b>02</b><div>Busca a un cliente y contáctalo</div></li>
+                    <li><b>03</b> <div>Compra el producto</div></li>
+                    <li><b>04</b><div>Entrégalo y obtén una ganancia</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="top: 0;" class="arrow-content morado-content flecha-pasos">
+        <p>Te aseguramos</p>
+        <button (click)="scroll(beneficios); cambiodeColorNavBarBlanco();cambiodeColorLiBlanco()">
+            <div class="arrow morado"></div>
+        </button>
+
+    </div>
+</div>
+<div class="beneficios-content" #beneficios>
+   <div class="content-secondary-benefits">
+        <div class="rapidez">
+            <img src="../../../../assets/Images/beneficios-rapidez-blanco.png">
+            <h4>Rapidez de Entrega</h4>
+            <div class="texto">
+            <p>En takemehome los productos llegarán en el tiempo estimado y con el máximo cuidado.</p>
+             </div>
+        </div>
+        <div class="acceso">
+            <img src="../../../../assets/Images/beneficios-24-horas-blanco.png">
+            <h4>Fácil acceso</h4>
+            <div class="texto">
+            <p>Nosotros brindamos un servicio que se acople a todos nuestros públicos objetivos con la finalidad que cada uno de ellos tengan un servicio adecuado y este disponible las 24 horas del día.</p>
+         </div>
+        </div>
+        <div class="seguridad">
+            <img src="../../../../assets/Images/beneficios-seguridad.png">
+            <h4>Seguridad</h4>
+            <div class="texto">
+                <p>Buscamos que todos nuestro clientes se sientan en un espacio seguro y confortable para evitar cualquier tipo de problemas.</p>
+            </div>
+          
+        </div>
+   </div>
+   <div class="arrow-content beneficios-arrow">
+    <p>Lo que dicen de nosotros</p>
+    <button (click)="scroll(comentarios);cambiodeColorNavBarMorado();cambiodeColorLiMorado()">
+        <div class="arrow"></div>
+    </button>
+
+    </div>
+</div>
+<section id="enterate-2" class="comentarios" #comentarios>
+    <div class="container">
+        <div class="titulo">
+            <div class="content-titulo-pasos">
+                <h2>Comentarios</h2>
+                <div class="line-morado"></div>
+             </div>
+        </div> 
+        <div class="content-comentarios">
+        <p>Estos son los comentarios que dejan las personas que ya han tenido experiencia con nuestro
+            servicio, lee lo que algunos opinan al respecto.</p>
+        <div class="grids">
+            <div class="carta">
+                <h3>Ana Maria Caceres</h3>
+                <p>“Me llegó a tiempo mi pedido, super puntuales”</p>
+            </div>
+            <div class="carta">
+                <h3>Roberto Llanos</h3>
+                <p>“El encargado de traer mi pedido fue muy atento y cuidadoso”</p>
+            </div>
+            <div class="carta">
+                <h3>Alexa Del Carpio</h3>
+                <p>“Buen servicio 100% seguro que volvere a usar esta app”</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="flecha-comentario">
+        <p>Se parte de <b>TakeMeHome</b></p>
+        <br>
+        <button (click)="scroll(inicio); cambiodeColorNavBarBlanco();cambiodeColorLiBlanco()">
+            <div class="arrow-comentario"></div>
+        </button>
+       
+
+    </div>
+</section>
+
+
+<footer id="pie">
+    <div class="container">
+        <div class="contacto-1">
+          
+
+            <div class="footer-group">
+                <h3>Empresa</h3>
+                <p style ="cursor: pointer" routerLink="/aboutus">Sobre nosotros</p>
+                <p style ="cursor: pointer" routerLink="/footer">Soporte</p>
+            </div>
+
+        </div>
+        <div class="line"> </div>
+        <div class="contacto-2">
+
+            <div class="footer-group-bottom">
+                <p>&copy; TakeMeHome, Inc. 2022</p>
+                <div class="sns">
+                    <p> Síguenos</p>
+                    <a href="https://www.instagram.com/" target="_blank"> 
+                        <img  src="../../../../assets/Images/instagram.png" alt="instagram logo">
+                    </a>
+                    <a href="https://www.facebook.com/"  target="_blank"> 
+                        <img src="../../../../assets/Images/facebook.png" alt="facebook logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>

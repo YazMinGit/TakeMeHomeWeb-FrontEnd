@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets/Fonts/sofiapro-light.otf");
+}
+@font-face {
+    font-family: "Coolvetica";
+    src: url("../../../../assets/Fonts/coolvetica2.otf");
+}
+.container-mainpage{
+    position: absolute;
+    width: 100vw;
+    height: calc(100% - 120px);   
+    background: #04BFBF; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family:Sofia-Pro;
+
+}
+
+.container-mainpage h2{
+    margin: 1.6rem;
+    margin-right: 0.7rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 3rem;
+    font-family:Sofia-Pro;
+}
+.linea{
+    width: 450px;
+    background-color: white;
+    height: 3px;
+    margin-left: 2.1rem;
+}
+.content-information{
+    margin-top: 1rem;
+    width: 100vw;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.2fr 0.8fr;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family:'Sofia-Pro';
+
+    justify-items: center;
+  
+    justify-content: center;
+
+}
+.container-delivery{
+    background-color: white;
+    display: flex;
+    width: 80vw;
+    height: 100%;
+    border-radius: 2rem;
+    text-align: center;
+    font-family:Sofia-Pro;
+    align-items: center;
+}
+.nombre-bienvenida{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.container-delivery h3{
+    width: 600px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family:'Coolvetica';
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+.container-delivery button{
+    width: 200px;
+    border-radius: 2rem;
+    height: 70px;
+    font-size: 1rem;
+    background-color: rgb(152, 208, 245);
+    border: none;
+    color: white;   
+    text-transform: uppercase;
+  
+}
+.content-text{
+    width: 70%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-btn{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.content-btn button{
+    margin-right: 2rem;
+    cursor: pointer;
+    font-family: Sofia-Pro;
+    font-weight: bold;
+  
+}
+.post{
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 2rem;
+}
+
+.cliente, .courier{
+    display: flex;
+    border-radius: 2rem;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+.cliente{
+    background-image: url('../../../../assets/Images/rosebox-BFdSCxmqvYc-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.courier{
+    background-image: url('../../../../assets/Images/handy-wicaksono-brizG9kR6qI-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn{
+    background-color: white;
+    border: 2px black solid;
+    font-size: 1rem;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: black;
+    border: 2px white solid;
+    color: white;
+    transition: 1s ease-in;
+}

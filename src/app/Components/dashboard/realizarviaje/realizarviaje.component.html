@@ -1,0 +1,114 @@
+<div class="main-content">
+    <div class="sub-content">
+        <div class="filtrado-vuelos">
+            <h2 style="color:white; ">Pedidos disponibles</h2>
+        </div>
+        <div class="vuelos-disponibles">
+            <mat-form-field appearance="standard">
+                <mat-label style="color:white">Búsqueda</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por pais, nombre y precio" #input>
+              </mat-form-field>
+            
+              
+              <table style="width: 100%; height:370px;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              
+            
+                 <ng-container matColumnDef="paisTrae">
+                  <th mat-header-cell *matHeaderCellDef> País de origen </th>
+                  <td mat-cell *matCellDef="let element"> {{element.paisTrae}} </td>
+                </ng-container>
+            
+            
+                <ng-container matColumnDef="paisRecibe">
+                  <th mat-header-cell *matHeaderCellDef> Pais de llegada </th>
+                  <td mat-cell *matCellDef="let element"> {{element.paisRecibe}} </td>
+                </ng-container>
+              
+            
+                <ng-container matColumnDef="nameProd">
+                  <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nameProd}} </td>
+                </ng-container>
+              
+            
+                <ng-container matColumnDef="fechaLimite">
+                  <th mat-header-cell *matHeaderCellDef> Fecha Limite de entrega </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fechaLimite}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <button  mat-raised-button color="primary" style="border-radius: 2rem; width: 90%; height: 40px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold;" (click)="getUsuarioPedido(element.idCliente);getPedido(element.id)" >Ver más</button>
+                  </td>
+                </ng-container> 
+            
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              
+               
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No existe información que coincide con "{{input.value}}"</td>
+                </tr>
+                 
+              </table>
+              <div *ngIf="descripcion" class="contenedor-info-final">
+                <div class="persona">
+                    <div class="info-persona">
+                        <div class="info-foto">
+                            <img src="../../../../assets/Images/FRENTE-NITIDA.jpg">
+                            <h4 [innerText]="nombreCompleto"></h4>
+                        </div>
+                        <div class="info-persona-des">
+                            <div class="destino">
+                            <div class="pais-llegada">
+                                <h5>Pais: </h5><p [innerText]="pais"></p>
+                            </div>
+                            <div class="ciudad-llegada">
+                                <h5>Ciudad: </h5><p [innerText]="ciudad"></p>
+                            </div>
+                            <div class="dir-llegada">
+                                <h5>Direccion: </h5> <p [innerText]="direcccion"></p>
+                            </div>
+                        </div>
+                        <div class="contacto">
+                            <div class="telefono">
+                                <h5>Telefono: </h5><p [innerText]="telefono"></p>
+                            </div>
+                            <div class="correo">
+                                <h5>Correo: </h5><p [innerText]="correo"></p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="equis">
+                        <mat-icon (click)="descripcionOff()" class="equis-icon">clear</mat-icon>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="img-product">
+                        <img>
+                    </div>
+                    <div  style="margin-top: 1rem;overflow-y: auto; " class="info-product">
+                        <div class="content">
+                            <h5>Nombre del producto: </h5><p [innerText]="nombreProducto"></p>
+                        </div>
+                        <div class="content">
+                            <h5>Precio: </h5><p [innerText]="precioProducto"></p>
+                        </div>
+                        <div  class="content" style="width: 80%;">
+                            <h5>URL: </h5><p [innerText]="urlProducto"></p>
+                        </div>
+                        
+                    </div>
+                    <div style="width:100%; height:100%; display: flex;align-items: flex-end;">
+                        <button  mat-raised-button color="primary" style="border-radius: 2rem; width: 90%; height: 40px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-bottom: 2rem;" (click)="descripcionActive()" >Aceptar Encargo</button>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+       
+    </div>
+</div>

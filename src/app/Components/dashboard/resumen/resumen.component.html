@@ -1,0 +1,41 @@
+<div class="main-content">
+    <div class="opciones-content">
+        <mat-accordion>
+            <mat-expansion-panel >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <b style=" font-family: 'Sofia-Pro'">Mis Viajes</b>
+                </mat-panel-title>
+                <mat-panel-description style=" font-family: 'Sofia-Pro'">
+                  Despliegue para ver las opciones
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="btn-content">
+                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Viajes en progreso</button>
+                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Historial de entregas</button>
+                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Comentarios</button>
+              
+              </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <b style=" font-family: 'Sofia-Pro'; font-weight: bold;">Mis Compras</b>
+                </mat-panel-title>
+                <mat-panel-description style=" font-family: 'Sofia-Pro'">
+                  Despliegue para ver las opciones
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="btn-content">
+                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;" routerLink="/dashboard/resumen/mispedidos">Mis pedidos</button>
+                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Historial</button>
+                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Puntos acumulados</button>
+              
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+    </div>
+    
+<router-outlet></router-outlet>
+</div>

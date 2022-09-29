@@ -1,0 +1,14 @@
+.mis-pedidos-container{
+    position: absolute;
+    width: 70vw;
+    height: calc(100vh - 120px);
+    left: calc(30vw + 8px);
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+.contenedor_tabla{
+    width: 80%;
+    height: 80%;
+    overflow-y: auto;
+}

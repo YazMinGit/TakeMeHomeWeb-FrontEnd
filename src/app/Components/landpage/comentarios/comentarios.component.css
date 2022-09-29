@@ -1,0 +1,191 @@
+.comentarios{
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#enterate-2 p {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+#enterate-2 .carta{
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+    color: white;
+    height: 150px;
+}
+.content-comentarios{
+    margin-top: 3rem;
+}
+
+.content-comentarios p{
+    font-family: 'Sofia-Pro';
+    font-size: 1.5rem;
+}
+.carta:first-child{
+    background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+    )
+    ,url("../../../../assets/Images/paquete2-2.jpg");
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+    )
+    ,url("../../../../assets/Images/paquete2-3.jpg");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+    )
+    ,url("../../../../assets/Images/paquete-4.jpg");
+
+}
+.carta h3{
+    font-family: 'Sofia-Pro';
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.carta p{
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: 300;
+}
+.flecha-comentario{
+    
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: rebota  0.8s alternate infinite ease-out;
+}
+.arrow-comentario{
+    width: 6vmin;
+	height: 6vmin;
+	box-sizing: border-box;
+    cursor: pointer;
+	transform: rotate(-45deg);
+}
+.arrow-comentario::before{
+    content: '';
+		width: 100%;
+		height: 100%;
+		border-width: .8vmin .8vmin 0 0;
+		border-style: solid;
+		border-color: #04BFBF;
+		transition: .2s ease;
+		display: block;
+		transform-origin: 100% 0;
+}
+.arrow-comentario::after{
+    content: '';
+		float: left;
+		position: relative;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		border-width: 0 .8vmin 0 0;
+		border-style: solid;
+		border-color: #04BFBF;
+		transform-origin: 100% 0;
+		transition:.2s ease;
+}
+.arrow-comentario:hover::before{
+    border-color: orange;
+    transform: scale(.8);
+}
+.arrow-comentario:hover::after{
+    transform: rotate(45deg);
+    border-color: orange;
+    height: 120%;
+}
+
+.flecha-comentario p{
+
+    margin-bottom: 1rem;
+    font-family: 'Sofia-Pro';
+    color: black;
+    font-size: 1.5rem;
+}
+.content-titulo-pasos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.line-morado{
+    width: 550px;
+    background: #04BFBF;
+    height: 4px;
+    border-radius: 2rem;
+ 
+}
+.content-titulo-pasos h2{
+    font-family: 'Sofia-Pro';
+    font-size: 3rem;
+    font-weight: bold;
+}
+@media (max-width:1700px){
+    
+.grids{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.content-comentarios{
+    margin-top: 1rem;
+}
+.carta h3{
+    font-family: 'Sofia-Pro';
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.content-titulo-pasos{
+    margin-top: 150px;
+}
+.carta p{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 300;
+}
+.carta{
+    height: 90px;
+    padding: 40px 0 !important;
+}
+}
+
+@media (max-width : 2220px){
+
+
+    .content-titulo-pasos{
+        margin-top: 130px;
+    }
+
+    .carta{
+        height: 15px;
+        padding: 20px 0 !important;
+    }
+    
+
+}

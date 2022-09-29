@@ -1,0 +1,102 @@
+<div class="body">
+    <div class="content-all">
+    <div *ngIf="appearRegister" class="register">
+        <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
+        <form  *ngIf="(!loading && !endregister)"  [formGroup]="register" (ngSubmit)="ingresar()" class="form">
+            <div (click)="appearLoginBack()" class="back" *ngIf="appearArrow">
+                <mat-icon class="flecha-back">arrow_back</mat-icon><div class="text-volver"><p>Volver al login</p></div>
+            </div>
+
+            <div class="title-content">
+            <h1>Registro</h1>
+            </div>
+            <div class="name-lastname-content">
+            <mat-form-field class="ancho name" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre" autocomplete="off" matInput>
+            </mat-form-field>
+            <mat-form-field class="ancho lastname" appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input formControlName="apellido" autocomplete="off" matInput>
+            </mat-form-field>
+            </div>
+            <div class="two-material">
+            <mat-form-field class="ancho fecha" color="primary" appearance="fill">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input formControlName="fecha" autocomplete="off" matInput>
+            </mat-form-field>
+            <mat-form-field class="ancho telefono" appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input formControlName="telefono" autocomplete="off" matInput>
+            </mat-form-field>    
+        </div>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Pais</mat-label>
+                <mat-select formControlName="pais" [formControl]="paisesControl">
+           
+                <mat-optgroup *ngFor="let group of paisesGroup" [label]="group.name"
+                              [disabled]="group.disabled">
+                  <mat-option *ngFor="let pais of group.pais
+                  " [value]="pais.value">
+                    {{pais.viewValue}}
+                  </mat-option>
+                </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input formControlName="usuario" autocomplete="off" matInput>
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            <button type="submit"  class="ancho button" mat-flat-button color="primary" [disabled]="register.invalid">Ingresar</button>
+        </form>
+        <div *ngIf="appearMessageRegister" class="msg-container">
+            <h2>Correcto</h2>
+            <img src="../../../assets/Images/3699516.png">
+            <p>Su registro ha sido exitoso, ahora dirigese al inicio de sesión para formar parte de nosotros.</p>
+            <button (click)="appearLoginActive()">OK</button>
+        </div>
+    </div>
+
+    <div class="saludo">
+        <div class="content-center">
+            <h2>Bienvenidos a</h2><img class="logo" src="../../../assets/Images/TMH-logo.png">
+        </div>
+        <img class="viejito" src="../../../../assets/Images/output-onlinegiftools.gif">
+    </div>
+  
+
+    <div *ngIf="appearLogin" class="login">
+     
+        <form  [formGroup]="login" >
+            <div  class="title-content">
+            <h1>Inicio Sesion</h1>
+            </div>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input formControlName="usuario" autocomplete="off" matInput>
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" matInput [type]="hide1 ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                  <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            <button (click)="ingresarDashboard()" class="ancho button" mat-flat-button color="primary" [disabled]="login.invalid">Ingresar</button>
+           
+        </form>
+        <div class="btn-registar">
+        <a (click)="ajusteRegistro()">¿Aún no estas registado?</a>
+        </div>
+    </div>
+    </div>
+    
+</div>
+

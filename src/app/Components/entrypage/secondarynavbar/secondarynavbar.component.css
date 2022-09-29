@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets//Fonts/sofiapro-light.otf");
+}
+
+.nav-container{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 120px;
+ 
+    font-family: "Sofia-Pro";
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 1;
+}
+.realcontent{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    align-items: center;
+    height: 116px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.content-bar{
+    width: 100vw;
+    height: 4px;
+}
+.logo{
+    width: 120px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.rutas-container{
+    display: flex;
+    justify-content: center;
+}
+.rutas-container ul{
+    display: flex;
+    list-style: none;
+}
+.rutas-container li{
+    display: flex;
+    padding-bottom: 0.5rem;
+    margin: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.barra{
+    width: 100vw;
+
+}
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: white;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: black;
+}
+
+::ng-deep .mat-progress-bar {
+    border-radius: 2px;
+}
+.btn-login{
+    font-family: "Sofia-Pro";
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 200px;
+    padding: 1rem 0rem;
+    border-radius: 2rem;
+    background-color: white;
+}
+.btn-login:hover{
+    background-color: black;
+    color: white;
+    border: solid white;
+    cursor: pointer;
+    transition: 0.4s ease-in;
+}
+.btn-content{
+    display: flex;
+    justify-content: end;
+    margin-right: 2rem;
+    
+}
+.rutas-container li:hover{
+    border-bottom: 3px solid black  ;
+    transition: 0.3s ease-in;
+}
+.rutas-container span{
+    margin-right: 1rem;
+}
+@media (max-width:1700px){
+  
+    .rutas-container li{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .realcontent li{
+        margin:  1.2rem;
+    }
+  
+}

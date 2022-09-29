@@ -1,0 +1,114 @@
+
+.nav-container-main{
+    width: 100vw;
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+   justify-content: center;
+   background: white ;
+   font-size: Sofia-Pro;
+}
+.nav-container-secondary{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.section-nav{
+    width: 33.3vw;
+}
+
+
+/* left-section*/
+.left-container{
+    display: flex;
+  align-items: center;
+}
+.logo{
+    width: 150px;
+}
+.buscador{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 35px;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 0 10px 0 15px;
+    margin-left: 1rem;
+}
+.buscador input{
+    outline: none;
+    border: none;
+    width: 90%;
+}
+.search-icon{
+    background-image: url('../../../../assets/Images/149852.png');
+    width: 28px;
+    height: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* mid-section*/
+.mid-container{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.items-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+.mid-container img{
+    width: 50px;
+    height: 50px;
+}
+.items-container a{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    justify-content: center;
+}
+.line{
+    position: relative;
+    bottom: -25px;
+    background-color:  #04BFBF;
+    height:4px;
+    width: 80px;
+}
+/* right-section*/
+.right-container{ 
+    display: flex;
+    justify-content: end;
+
+}
+.right-container button{
+    width: 70px;
+    height: 70px;
+    border-radius: 2.2rem;
+    margin-right: 1.5rem;
+    cursor:pointer;
+    background-color:#04BFBF;
+
+    border:none;
+}
+.right-container img{
+    width: 80%;
+}
+.icono-campana{
+    color: white;
+}
+.img-perfil{
+    border-radius: 1.5rem;
+    width: 100%;
+}

@@ -1,0 +1,25 @@
+<nav class="nav-container"   [ngStyle]="{'background-color':colorNavbar}">
+    <div class="realcontent">
+    <div class="logo-container">
+        <img routerLink="/" class="logo" src="../../../assets/Images/TMH-logo.png">
+    </div>
+    <div class="rutas-container">
+        <ul>
+            
+            <li routerLink="/aboutus" (click)=" cambiodeColorNavBarBlanco()"  [ngStyle]="{'color':colorli,'border-color':colorli}"><span>01 </span> ¿Quienes Somos?</li>
+            <li routerLink="/pasos"  (click)=" cambiodeColorNavBarMorado()"  [ngStyle]="{'color':colorli,'border-color':colorli}"><span>02 </span> Es simple</li>
+            <li routerLink="/beneficios" (click)=" cambiodeColorNavBarBlanco()" [ngStyle]="{'color':colorli,'border-color':colorli}"><span>03 </span> Beneficios</li>
+            <li routerLink="/comentarios" (click)=" cambiodeColorNavBarMorado()" [ngStyle]="{'color':colorli,'border-color':colorli}"><span>04 </span> Entérate</li>
+            <li routerLink="/footer" [ngStyle]="{'color':colorli,'border-color':colorli}"> <span>05 </span> Soporte</li>
+          
+        </ul>
+    </div>
+    <div class="btn-content">
+        <button routerLink="/entry" class="btn-login">Iniciar Sesión</button>
+    </div>
+  
+    </div>
+    <div class="content-bar">
+    <mat-progress-bar mode="indeterminate" class="barra" ></mat-progress-bar>
+    </div>
+</nav>

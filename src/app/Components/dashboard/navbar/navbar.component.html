@@ -1,0 +1,25 @@
+<mat-toolbar class="nav-container-main" color="primary">
+    <mat-toolbar-row class="nav-container-secondary">
+      <div class="left-container section-nav">
+        <img class="logo" src="../../../assets/Images/TMH-logo.png">
+      
+      </div>
+      <div class="mid-container section-nav">
+        <div class="items-container">
+            <a (click)="activo1()" routerLink="/dashboard"><mat-icon  [ngStyle]="{'color': color1, 'scale': '2'}" class="icon" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon><div *ngIf="active1" class="line "></div></a>
+            <a (click)="activo2()" routerLink="/dashboard/realizarpedido"><mat-icon [ngStyle]="{'color': color2, 'scale': '2'}"  class="icon" aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon><div *ngIf="active2" class="line"></div></a>
+            <a (click)="activo3()" routerLink="/dashboard/realizarviaje"><mat-icon [ngStyle]="{'color': color3 ,'scale': '2'}"  class="icon" aria-hidden="false" aria-label="Example home icon" fontIcon="flight_takeoff"></mat-icon><div *ngIf="active3"  class="line"></div></a>
+        </div>
+      </div>
+      <div class="right-container section-nav">
+        
+        <button  (click)="acitveNotfications()"><mat-icon matBadge="15" matBadgeSize="small" class="icono-campana" style="scale:1.8 ;" matBadgeColor="warn" >notifications</mat-icon></button>
+        <button (click)="activateSlider()"><img class="img-perfil"  src="../../../../assets/Images/FRENTE-NITIDA.jpg"></button>
+      </div>
+     
+        <app-notifications *ngIf="showNotifications"></app-notifications>
+   
+   
+        <app-configurationslider *ngIf="showBarConfiguration"></app-configurationslider>
+     
+</mat-toolbar-row>

@@ -1,0 +1,115 @@
+<div class="profile-content">
+  <div class="profile-main">
+    <div class="personal-data">
+      <div class="foto-perfil">
+        <div class="miperfil">
+          <h3>Mi Perfil</h3>
+          <div class="line"></div>
+        </div>
+        <div class="image-content">
+          <img src="../../../../assets/Images/FRENTE-NITIDA.jpg">
+        <div class="content-estrellas">
+          <h4>3</h4>
+          <mat-icon style="color: #04BFBF;">star</mat-icon>
+        </div>
+        </div>
+        
+      </div>
+      <div class="content-datos-general">
+        <div class="content-subtitulo">
+        <h3>Nombres:</h3>
+        </div>  
+        <div class="content-datos">
+        <mat-icon>account_box</mat-icon>
+        <p [innerText]="nombrecompleto"></p>
+      </div>
+      </div>
+      <div class="content-datos-general">
+        <div class="content-subtitulo">
+        <h3>Fecha de Nacimiento:</h3>
+        </div>
+        <div class="content-datos">
+          <mat-icon>calendar_today</mat-icon>
+          <p [innerText]="fecha_nac"></p>
+        </div>
+      </div>
+      <div class="content-datos-general">
+        <div class="content-subtitulo">
+        <h3>Telefono:</h3>
+        </div>
+        <div class="content-datos">
+          <mat-icon> phone</mat-icon>
+          <p [innerText]="telefono"></p>
+        </div>
+      </div>
+      <div class="content-datos-general">
+        <div class="content-subtitulo">
+        <h3>País:</h3>
+        </div>
+        <div class="content-datos">
+          <mat-icon>flag</mat-icon>
+          <p [innerText]="pais"></p>
+        </div>
+      </div>
+      <div class="content-datos-general">
+        <div class="content-subtitulo">
+        <h3>Correo Electrónico:</h3>
+        </div>
+        <div class="content-datos">
+          <mat-icon> email</mat-icon>
+          <p [innerText]="correo"></p>
+        </div>
+      </div>
+    </div>
+     <div class="secondary-content">
+      <div class="foto-perfil">
+        <div class="miperfil actualizar">
+          <div class="titulo-actualizar">
+            <h3>Actualizar datos</h3>
+            <div class="line-update"></div>
+          </div>
+         
+        </div>
+      </div>
+      <div class="change-content">
+        <form style="display:flex ; flex-direction:column;align-items:center; width: 100%;" [formGroup]="update">
+        <mat-form-field appearance="legacy" class="inputcontent">
+          <mat-label  class="mat" >Actualiza tu Correo</mat-label>
+          <input class="input" formControlName="usuario" autocomplete="off" matInput placeholder="Ingresa tu correo electrónico">
+          <mat-icon matSuffix>email</mat-icon>
+         
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="inputcontent">
+          <mat-label class="mat" >Actualiza tu numero telefonico</mat-label>
+          <input class="input" formControlName="telefono" autocomplete="off"  matInput placeholder="Ingresa tu numero ">
+          <mat-icon matSuffix>phone</mat-icon>
+         
+        </mat-form-field>
+       
+        <button (click)="editUser()" mat-raised-button color="primary"  style="background-color: #04BFBF; border-radius: 2rem; font-family:'Sofia-Pro';" [disabled]="update.invalid" class="btn-guardarcambios">Guardar cambios</button>
+        </form>
+      </div>
+      <div class="comentarios-content">
+        <div class="foto-perfil">
+          <div class="miperfil">
+            <h3>Comentarios</h3>
+            <div class="line-update"></div>
+          </div>
+        </div>
+        <div class="content-comments">
+        <div class="comentarios">
+          <div class="comentario">
+            
+          </div>
+          <div class="comentario">
+            
+          </div>
+          <div class="comentario tres">
+           
+          </div>
+        </div>
+      </div>
+      </div>
+     </div>
+  </div>
+</div>

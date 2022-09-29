@@ -1,0 +1,53 @@
+<div class="mis-pedidos-container">
+    <div class="contenedor_tabla">
+    <mat-form-field appearance="standard">
+        <mat-label style="color:white">Búsqueda</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por pais, nombre y precio" #input>
+      </mat-form-field>
+    
+      
+      <table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+    
+         <ng-container matColumnDef="nameProd">
+          <th mat-header-cell *matHeaderCellDef> País de origen </th>
+          <td mat-cell *matCellDef="let element"> {{element.nameProd}} </td>
+        </ng-container>
+    
+    
+        <ng-container matColumnDef="categoria">
+          <th mat-header-cell *matHeaderCellDef> Pais de llegada </th>
+          <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+        </ng-container>
+      
+    
+        <ng-container matColumnDef="precio">
+          <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+          <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+        </ng-container>
+      
+    
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef> Fecha Limite de producto </th>
+          <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element"> 
+            <button  mat-raised-button color="primary" style="border-radius: 2rem; width: 80%; height: 40px; background-color:red; font-family: 'Sofia-Pro'; font-size: 0.8rem;font-weight: bold;" (click)="deletePedido(element.id)">Eliminar</button>
+          </td>
+        </ng-container> 
+    
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+       
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No existe información que coincide con "{{input.value}}"</td>
+        </tr>
+         
+      </table>
+    </div>
+</div>

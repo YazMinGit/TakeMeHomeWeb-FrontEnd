@@ -1,0 +1,27 @@
+.main-content{
+    position: absolute;
+    width: 100vw;
+    height: calc(100% - 120px);   
+    background-color: #04BFBF;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family:'Sofia-Pro';
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.opciones-content{
+    position: absolute;
+    left: 0;
+    height:100%;
+    top: 0;
+    width: 30vw;
+    background-color: white;
+    border: 4px solid black;
+}
+.btn-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

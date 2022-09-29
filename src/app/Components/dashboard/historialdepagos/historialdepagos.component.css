@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets/Fonts/sofiapro-light.otf");
+}
+@font-face {
+    font-family: "Coolvetica";
+    src: url("../../../../assets/Fonts/coolvetica2.otf");
+}
+.main-content{
+    position: absolute;
+    width: 100vw;
+    height: calc(100% - 120px);   
+    background:#04BFBF; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family:'Sofia-Pro';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.historial-content{
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr;
+    width: 90vw;
+    height: 60vh;
+    background-color: white;
+    border-radius: 2rem;
+    align-items: center;
+    justify-items: center;
+}
+.pagos{
+    width: 90%;
+    height: 90%;
+    background-color: #04ADBF;
+    overflow-y: scroll;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    font-family: 'Sofia-Pro';
+    
+}
+.division{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 80%;
+}
+.linea-punteada{
+    width: 1px;
+    height: 100%;
+
+    border-right: 6px black dashed ;
+}
+.content-titulo{
+    height: 80px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content-titulo h2{
+    font-family:'Sofia-Pro';
+    font-weight: bold;
+    color: white;
+    font-size: 3rem;
+}
+.linea{
+    width: 500px;
+    height: 4px;
+    border-radius: 2rem;
+    background-color: white;
+}
+.pagohecho{
+    display: flex;
+    width: 80%;
+    height: 120px;
+    background-color: white;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+.pagohecho img{
+    width: 80px;
+    height: 80px;
+    border-radius: 3rem;
+    margin: 1rem;
+}
+.pagos h3{
+    font-size: 2rem;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+}
+@media (max-width:1700px){
+    .main-content{
+        justify-content:left;
+    }
+}

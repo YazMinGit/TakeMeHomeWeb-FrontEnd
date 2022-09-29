@@ -1,0 +1,27 @@
+<section class="container-mainpage">
+    <div class="nombre-bienvenida">
+    <h2>Bienvenido </h2><h3 style="color: white;
+    font-size: 3rem;
+    font-family:Sofia-Pro;margin-top: 2rem;" [innerText]="nombre"></h3>
+    </div>
+    <div class="linea"></div>
+    <div class="content-information">
+        <div class="container-delivery">
+            <div class="content-text">
+                <h3>{{mensaje}}</h3>
+            </div>
+            <div class="content-btn">
+                <button routerLink="/dashboard/realizarpedido">SOCILITAR DELIVERY</button>
+            </div>
+         
+        </div>
+        <div class="post">
+            <div class="cliente">
+                <button class="btn" routerLink="/dashboard/realizarpedido" >Realiza un pedido</button>
+            </div>
+            <div class="courier">
+                <button class="btn" routerLink="/dashboard/realizarviaje">Convierte en un courier</button>
+            </div>
+        </div>
+    </div>
+</section>

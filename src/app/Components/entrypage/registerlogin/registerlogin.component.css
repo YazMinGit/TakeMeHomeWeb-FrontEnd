@@ -1,0 +1,337 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets//Fonts/sofiapro-light.otf");
+}
+@font-face {
+    font-family: "Coolvetica-uno";
+    src: url("../../../../assets//Fonts/coolvetica2.otf");
+}
+@font-face {
+    font-family: "Coolvetica-dos";
+    src: url("../../../../assets//Fonts/coolvetica3.otf");
+}
+@font-face {
+    font-family: "Coolvetica-tres";
+    src: url("../../../../assets/Fonts/coolvetica4.otf");
+}
+@font-face {
+    font-family: "Coolvetica-cuatro";
+    src: url("../../../../assets/Fonts/coolvetica5.otf");
+}
+@font-face {
+    font-family: "Coolvetica-cinco";
+    src: url("../../../../assets//Fonts/coolvetica1.otf");
+}
+
+.body{
+   width: 100vw;
+   height: 100vh;
+   font-family: "Sofia-Pro";
+
+}
+.content-all{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    top: 120px;
+    width: 100vw;
+    height: calc(100vh - 120px);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #04BFBF;
+    font-family: "Sofia-Pro";
+}
+.login,.register{
+
+    text-align: center;
+    background-color: white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sofia-Pro";
+}
+.login:hover,.register:hover{
+    scale: 1.05;
+}
+
+.btn-registar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+.title-content{
+    display: flex;
+    justify-content: left;
+}
+.title-content h1{
+    padding: 0 4rem;
+    font-size: 2.5rem;
+    font-family: "Sofia-Pro";
+    font-weight: bold;
+}
+.login img{
+    width: 50%;
+}
+.ancho{
+    width: 80%;
+    font-family: "Sofia-Pro";
+}
+.button{
+    height: 50px;
+    background-color: #049DD9;
+}
+.spinner{
+    margin: 0 auto;
+}
+.btn-registar{
+    display: none;
+}
+.saludo h2{
+    font-family: "Coolvetica-cuatro";
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+.logo{
+    width: 320px;
+}
+.register{
+    position: absolute;
+    z-index: 1;
+    left: 100px;
+    width: 600px;
+    height: 750px;
+}
+
+.login{
+    position: absolute;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+    height: 500px;
+}
+.saludo{
+    overflow-x: hidden;
+    position: absolute ;
+    z-index: 0;
+    width: 800px;
+    height: 100vh;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.avion{
+    position: absolute;
+    top:400px;
+    width: 1200px;
+    left: 700px;
+    height: 700px;
+
+}
+.viejito{
+    position: absolute;
+    bottom: 40%;
+}
+.content-center{
+
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.content-center h2{
+    margin-bottom: 3rem;
+}
+.msg-container{
+    background:rgb(67,97,229);
+    border-radius: 2rem;
+    color: white;
+    width: 80%;
+    padding: 10px;
+}
+.msg-container img{
+    width: 50px;
+}
+.msg-container button{
+    padding: 10px 30px;
+    border-radius: 2rem;
+    box-shadow: none;
+    border: 1px black solid;
+    background-color: white;
+    cursor: pointer;
+}
+.msg-container button:hover{
+    background-color: black;
+    color:white
+}
+.back{
+    display: flex;
+    margin-left: 2rem;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    height: 50px;
+
+}
+.back p{
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+}
+@media (max-width:2500px){
+   
+    .viejito{
+        bottom:30%;
+    }
+}
+@media (max-width:2200px){
+  
+    .viejito{
+        bottom: 20%;
+    }
+}
+@media (max-width:2180px){
+   
+    .viejito{
+        display: flex;
+       width: 400px;
+       bottom: 30%;
+
+    }   
+}   
+@media (max-width:2000px){  
+    
+    .saludo h2{ 
+       font-size: 3.2rem;   
+    }   
+    .viejito{   
+        width: 450px;
+    }
+    .logo{
+        width: 300px;
+    }
+}
+@media (max-width:1950px){
+   
+    .saludo h2{
+       font-size: 3.2rem;
+    }
+    .viejito{
+        width: 400px;
+    }
+    .logo{
+        width: 300px;
+    }
+}
+@media (max-width:1850px){
+    .saludo h2{
+        font-size: 2.8rem;
+     }
+     .viejito{
+         width: 400px;
+     }
+     .logo{
+         width: 200px;
+     }
+}
+@media (max-width:1700px){
+   
+    .login{
+        height: 100%;
+        width: 50vw;
+        left: 0;
+        border-radius: 0;
+        
+    }
+    .saludo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        right: 0;
+    }
+    .saludo h2{
+        font-size: 4.5rem;
+    }
+    .logo{
+        position: static;
+        width: 200px;
+    }
+    .viejito{
+    
+        display: flex;
+        position: static;
+        width: 450px;
+   
+    }
+    .login:hover, .register:hover{
+        scale: 1;
+    }
+    .btn-registar{
+        display: flex;
+        cursor: pointer;
+      
+    }
+    .btn-registar a:hover{
+        color: rgb(67,97,229);
+    }
+    .register{
+     
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50vw;
+        left: 0;
+        border-radius: 0;
+    }
+    .name-lastname-content,.two-material{
+        display: flex;
+        margin: 0 4rem;
+    }
+   
+  .telefono{
+    margin-left: 1rem;
+    }
+    
+    .lastname{
+        margin-left: 1rem;
+    }
+}
+@media (max-width:1500px){
+    .saludo{
+        display: flex;
+        justify-content:first baseline ;
+        top: 0;
+        align-content: center;
+        height: 100vh;
+
+    }
+    .saludo h2{
+        font-size: 3.5rem;
+    }
+    .logo{
+        
+        margin-top: 0;
+        width: 150px;
+    }
+
+    .viejito{
+    
+        margin-top: 5rem;
+        width: 300px;
+   
+    }
+ 
+}

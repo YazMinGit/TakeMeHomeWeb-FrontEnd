@@ -1,0 +1,23 @@
+<div *ngIf="show" class="configuration-slider">
+    <div class="items-content">
+        <div class="first-item">
+            <img src="../../../../assets/Images/FRENTE-NITIDA.jpg">
+            <div class="text-container">
+                <p [innerText]="nombreCompleto"></p>
+                <b class="myaccount">Mi cuenta</b>
+            </div>
+        </div>
+        <div class="last-item">
+            <ul>
+                <li (click)="cambioPagina('perfil')"><mat-icon aria-hidden="false" class="
+                    icon" aria-label="Example home icon">person_outline</mat-icon>Perfil</li>
+                <li (click)="cambioPagina('resumen')" ><mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">format_list_numbered</mat-icon>Resumen</li>
+                <li  (click)="cambioPagina('historial')"><mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">attach_money</mat-icon>Historial de Pagos</li>
+                <li (click)="goToLink('/')" ><mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">device_hub</mat-icon>Compañia</li>
+                <li (click)="cambioPagina('soporte')"><mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">contact_support</mat-icon>Soporte </li>
+                <li (click)="goOut()"><mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">exit_to_app<</mat-icon>Cerrar Sesión </li>
+            </ul>
+        </div>
+    </div>
+  
+</div>

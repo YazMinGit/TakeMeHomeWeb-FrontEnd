@@ -1,0 +1,142 @@
+<div class="main-content">
+    <div class="titulo">
+        <h2>Realizar pedido</h2>
+    </div>
+    <form [formGroup]="registerPedido">
+    <div class="add-pedido-content">
+        <div class="ubicacion">
+            <h3>Detalle Ubicación</h3>
+            <div class="ubicacion-llegada">
+                <div class="subtitulo">
+                    <div class="subitutlo-content">
+                    <h4>¿Dónde y cuando recibirá su pedido?</h4>
+                    <mat-icon style="margin-left: 1rem; scale:1.3">flight_takeoff</mat-icon>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            
+        
+            <mat-form-field style="background-color: white; color: #04bfbf;" class="ancho" appearance="legacy">
+                <mat-label style="color: black;">Pais</mat-label>
+                <mat-select  formControlName="paisRecibe" [formControl]="paisesControl">
+                  
+                <mat-optgroup  *ngFor="let group of paisesGroup" [label]="group.name"
+                              [disabled]="group.disabled">
+                  <mat-option *ngFor="let pais of group.pais
+                  " [value]="pais.value">
+                    {{pais.viewValue}}
+                  </mat-option>
+                </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="legacy">
+              <mat-label style="color: black;">Dirección </mat-label>
+              <input formControlName="direccion" autocomplete="off" matInput  placeholder="Placeholder">
+         
+              <mat-icon matSuffix>location_on<</mat-icon>
+            
+            </mat-form-field>
+            
+            <div class="responsive">
+              <mat-form-field class="direccion" appearance="legacy">
+                <mat-label style="color: black;">Ciudad </mat-label>
+                <input formControlName="ciudad" autocomplete="off" matInput placeholder="Placeholder">
+                <mat-icon matSuffix>location_city</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="fechalimite" appearance="legacy">
+                <mat-label style="color: black;">Fecha limite </mat-label>
+                <input formControlName="fechalimite" autocomplete="off" matInput>
+           
+                <mat-icon matSuffix>event<</mat-icon>
+              </mat-form-field>
+            </div>
+            </div>
+            <div class="ubicacion-salida">
+                <div class="subtitulo">
+                    <div class="subitutlo-content">
+                    <h4>¿De dónde traerá su pedido?</h4>
+                    <mat-icon style="margin-left: 1rem; scale:1.3">flight_land</mat-icon>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                
+                <mat-form-field class="ancho" appearance="legacy">
+                    <mat-label style="color: black;">Pais</mat-label>
+                    <mat-select formControlName="paisTrae" [formControl]="paisesControl">
+               
+                    <mat-optgroup *ngFor="let group of paisesGroup" [label]="group.name"
+                                  [disabled]="group.disabled">
+                      <mat-option *ngFor="let pais of group.pais
+                      " [value]="pais.value">
+                        {{pais.viewValue}}
+                      </mat-option>
+                    </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="line-btn">
+            <div class="line-divisor"></div>
+            <button [disabled]="registerPedido.invalid" mat-raised-button color="primary" style="border-radius: 2rem; width: 100%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;" (click)="savePedido()">Registrar Producto</button>
+        </div>
+        <div class="producto">
+            <h3>Detalle Producto</h3>
+            <div class="info-content-url">
+                <div class="foto-producto">
+                    <img class="img-product">
+                    <div class="texto-upload">
+                    <mat-icon style="margin-right:0.5rem ;">attachment</mat-icon><p>Carga foto</p>
+                    </div>
+                </div>
+                <mat-form-field class="ancho-product" appearance="legacy">
+                    <mat-label style="color: black;">URL del producto </mat-label>
+                    <input formControlName="url" autocomplete="off" matInput placeholder="Placeholder" >
+                  
+                    <mat-icon matSuffix>personal_video</mat-icon>
+                    
+                  </mat-form-field>
+            </div>
+            <div class="info-product">
+                <mat-form-field class="ancho-product" appearance="legacy">
+                    <mat-label style="color: black;">Nombre del producto</mat-label>
+                    <input formControlName="nameProduct" autocomplete="off" matInput placeholder="Placeholder">
+               
+                    <mat-icon matSuffix>shopping_cart<</mat-icon>
+                  
+                  </mat-form-field>
+                  
+                <mat-form-field class="ancho-product" appearance="legacy">
+                    <mat-label style="color: black;">Categoría</mat-label>
+                    <mat-select [(ngModel)]="selectedValue" formControlName="categoria">
+                      <mat-option *ngFor="let category of categories" [value]="category.value">
+                        {{category.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="ancho-product" appearance="legacy">
+                    <mat-label style="color: black;">Precio</mat-label>
+      
+                    <input formControlName="precio" autocomplete="off" matInput  placeholder="Placeholder">
+                    <mat-icon matSuffix> money<</mat-icon>
+                  
+                  </mat-form-field>
+                  <mat-form-field class="ancho-product" appearance="legacy">
+                    <mat-label style="color: black;">Dimensiones</mat-label>
+                    <input formControlName="dimensiones" autocomplete="off" matInput  placeholder="Placeholder">
+                  
+                    <mat-icon matSuffix> work<</mat-icon>
+                  
+                  </mat-form-field>
+                  
+            </div>
+        </div>
+    </div>
+  </form>
+  <div *ngIf="aparicion_mensaje" class="msg-container">
+    <h2>Correcto</h2>
+    <img src="../../../assets/Images/3699516.png">
+    <p>Su registro de pedido ha sido exitoso.</p>
+    <button class="btn-guardar" (click)="desaparecerMensaje()">OK</button>
+</div>
+</div>

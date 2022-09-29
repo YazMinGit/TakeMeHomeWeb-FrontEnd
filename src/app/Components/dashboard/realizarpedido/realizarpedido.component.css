@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets/Fonts/sofiapro-light.otf");
+}
+.main-content{
+    position: absolute;
+    width: 100vw;
+    height: calc(100% - 120px);   
+    background-color: #04BFBF;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family:'Sofia-Pro';
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    align-items: center;
+}
+.titulo{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.titulo h2{
+    font-family: 'Sofia-Pro';
+    font-size: 3rem;
+    font-weight: bold;
+}
+.add-pedido-content{
+    width: 90vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr;
+}
+.ubicacion,.producto{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.ubicacion-llegada,.ubicacion-salida{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+.subtitulo{
+
+    width: 70%;
+  display: flex;
+  flex-direction: column;
+    
+}
+.subitutlo-content{
+    display: flex;
+    width: 100%;
+    flex-direction: row ;
+    justify-content: left;
+}
+.line{
+    width: 350px;
+    height: 4px;
+    background-color: #04BFBF;
+    border-radius: 2rem;
+}
+.ancho{
+    width: 50%;
+    margin: 0.25rem;
+}
+.subtitulo h4{
+    font-size: 1.3rem;
+    font-family: 'Sofia-Pro';
+}
+.ubicacion h3,.producto h3{
+    font-size: 1.5rem;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+}
+.ubicacion,.producto{
+    margin: 0.8rem;
+}
+.info-content-url{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+.foto-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-product{
+    width: 80px;
+    height: 80px;
+    border-radius: 1rem;
+    background-color: red;
+}
+.texto-upload{
+    display: flex;
+    cursor: pointer;
+
+}
+.info-product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.ancho-product{
+    width: 70%;
+}
+.line-divisor{
+    height: 70%;
+    width: 5px;
+    border-radius: 2rem;
+    background-color: #04BFBF;
+}
+.line-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.direccion{
+    width: 45%;
+}
+.fechalimite{
+    width: 50%;
+}
+.fechalimite{
+    margin-left: 0.5rem;
+}
+.responsive{
+    width: 50%;
+}
+.msg-container{
+    background-color: #04BFBF;
+    width: 300px;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 40%;
+    top: 20%;
+}
+.msg-container h2{
+    margin-top: 1rem;
+    font-family: 'Sofia-Pro';
+}
+.btn-guardar{
+    border-radius: 2rem;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    border:2px black solid;
+    background-color: white;
+    cursor: pointer;
+}
+.btn-guardar img{
+    width: 40%;
+}
+.msg-container p{
+    text-align: center;
+}
+@media (max-width:1500px) {
+    .responsive{
+        display: flex;
+        align-items: center;
+    }
+}

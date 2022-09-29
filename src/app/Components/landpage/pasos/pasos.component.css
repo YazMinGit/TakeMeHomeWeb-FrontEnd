@@ -1,0 +1,304 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets//Fonts/sofiapro-light.otf");
+}
+@font-face {
+    font-family: "Monserrat";
+    src: url("../../../../assets/Fonts/Montserrat-Bold.ttf");
+}
+
+/*navbar*/
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets//Fonts/sofiapro-light.otf");
+}
+.morado-content{
+    position: relative;
+    top:10% !important;
+    animation: rebota2  0.8s alternate infinite ease-out !important ;
+    
+}
+.morado-content p{
+    color: black !important;
+    
+}
+.morado::before{
+    content: '';
+		width: 100%;
+		height: 100%;
+		border-width: .8vmin .8vmin 0 0;
+		border-style: solid;
+		border-color: #04BFBF;
+		transition: .2s ease;
+		display: block;
+		transform-origin: 100% 0;
+}
+.morado::after{
+    content: '';
+		float: left;
+		position: relative;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		border-width: 0 .8vmin 0 0;
+		border-style: solid;
+		border-color: #04BFBF;
+		transform-origin: 100% 0;
+		transition:.2s ease;
+}
+.morado:hover::before{
+    border-color: orange;
+    transform: scale(.8);
+}
+.morado:hover::after{
+    transform: rotate(45deg);
+    border-color: orange;
+    height: 120%;
+}
+.pasos-container{
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-titulo-pasos h2{
+    font-family: 'Sofia-Pro';
+    font-size: 3rem;
+    font-weight: bold;
+}
+.container-si-eres h2{
+
+    font-family: 'Sofia-Pro';
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+.listas-content{
+    width: 70vw;
+    height: 55vh;
+    background-color: #F2E3D5;
+    border-radius: 2rem;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.foto-clientes{
+    width: 100%;
+    background-color: red;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../../../assets/Images/john-schnobrich-2FPjlAyMQTA-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-right: 2px white solid;
+}
+.foto-turista{
+    width: 100%;
+    background-color: red;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../../../assets/Images/bhupendra-singh-3n0FEnkoa4s-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-left: 2px white solid;
+}
+.lista-cliente{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem 0 0 2rem;
+  
+}
+.turista-texto{
+    margin-top: 1rem;
+   
+}
+.cliente ul{
+    list-style: none;
+}
+.cliente b{
+    font-weight: bold;
+    margin-right: 1rem;
+}
+.turistas b{
+    font-weight: bold;
+    margin-right: 1rem;
+}
+.cliente, .turistas{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+#si-eres > div.listas-content > div.lista-cliente > div.cliente > ul > li{
+    margin-top: 2rem;
+    display: flex;
+}
+#si-eres > div.listas-content > div.lista-turista > div.turistas > ul > li{
+    margin-top: 2rem;
+    display: flex;
+}
+.turista-texto, .cliente-texto{
+    font-weight: bold ;
+}
+.turistas,.cliente{
+    font-size: 1.5rem;
+    font-family: 'Sofia-Pro';
+}
+.turista li{
+    margin-top: 2rem;
+}
+.lista-turista{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem 0 0 2rem;
+}
+.listas-content h3{
+    color: white;
+    font-size: 2.8rem;
+    font-family: 'Sofia-Pro';
+}
+
+.container-si-eres {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.arrow{
+    width: 6vmin;
+	height: 6vmin;
+	box-sizing: border-box;
+    cursor: pointer;
+	transform: rotate(-225deg);
+}
+.arrow::before{
+    content: '';
+		width: 100%;
+		height: 100%;
+		border-width: .8vmin .8vmin 0 0;
+		border-style: solid;
+		border-color: #fafafa;
+		transition: .2s ease;
+		display: block;
+		transform-origin: 100% 0;
+}
+.arrow::after{
+    content: '';
+		float: left;
+		position: relative;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		border-width: 0 .8vmin 0 0;
+		border-style: solid;
+		border-color: #fafafa;
+		transform-origin: 100% 0;
+		transition:.2s ease;
+}
+.arrow:hover::before{
+    border-color: orange;
+    transform: scale(.8);
+}
+.arrow:hover::after{
+    transform: rotate(45deg);
+    border-color: orange;
+    height: 120%;
+}
+.arrow-content p{
+
+
+    font-family: 'Sofia-Pro';
+    color: white;
+    font-size: 1.5rem;
+}
+.arrow-content{
+    position: relative;
+    top:25%;
+    width: 100vw;
+    height: 150px;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: rebota  0.8s alternate infinite ease-out;
+}
+button{
+    background-color: inherit;
+    border: none;
+}
+.content-titulo-pasos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+.line-morado{
+    width: 550px;
+    background: #04BFBF;
+    height: 4px;
+    border-radius: 2rem;
+ 
+}
+@media (max-width:1700px){   
+.content-titulo-pasos{
+    margin-top: 100px;
+}
+.content-titulo-pasos h2{
+    font-size: 2rem;
+}
+.container-si-eres h2{
+
+    font-family: 'Sofia-Pro';
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+.listas-content{
+    width: 70vw;
+    height: 40vh;
+    margin-top:8rem;
+}
+.turista-texto{
+    margin-top: 1rem;
+   
+}
+.cliente, .turistas{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+#si-eres > div.listas-content > div.lista-cliente > div.cliente > ul > li{
+    margin-top: 1rem;
+    display: flex;
+}
+#si-eres > div.listas-content > div.lista-turista > div.turistas > ul > li{
+    margin-top: 1rem;
+    display: flex;
+}
+
+.turistas,.cliente{
+    font-size: 1rem;
+    
+}
+.listas-content h3{
+    font-size: 2rem;
+}
+}
