@@ -1,0 +1,89 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Lima",
+      "lastname": "Lima",
+      "email": "Lima",
+      "fecha": "Lima",
+      "phone": "123",
+      "pais": "Perú",
+      "contraseña": "Lima"
+    },
+    {
+      "id": 2,
+      "name": "Dario",
+      "lastname": "Diaz",
+      "email": "omar",
+      "fecha": "18/11/04",
+      "phone": "997846040",
+      "pais": "Perú",
+      "contraseña": "universo2004"
+    }
+  ],
+  "Pedido": [
+    {
+      "id": 1,
+      "idCliente": 0,
+      "fechaOrden": "hoy",
+      "fechaLimite": "Lima",
+      "paisRecibe": "Argentina",
+      "ciudad": "Lima",
+      "direccion": "Lima",
+      "paisTrae": "Argentina",
+      "url": "Lima",
+      "nameProd": "Lima",
+      "categoria": "Cuidado Personal",
+      "precio": 0,
+      "dimensiones": "Lima",
+      "estado": "No tomado"
+    },
+    {
+      "id": 2,
+      "idCliente": 0,
+      "fechaOrden": "hoy",
+      "fechaLimite": "18/11/2003",
+      "paisRecibe": "Perú",
+      "ciudad": "Lima",
+      "direccion": "santa anita|",
+      "paisTrae": "Chile",
+      "url": "https://www.npmjs.com/package/@angular/cli",
+      "nameProd": "sdkoalkasdol",
+      "categoria": "Tecnologia",
+      "precio": 0,
+      "dimensiones": "23x22",
+      "estado": "No tomado"
+    },
+    {
+      "id": 3,
+      "idCliente": 0,
+      "fechaOrden": "hoy",
+      "fechaLimite": "",
+      "paisRecibe": "",
+      "ciudad": "",
+      "direccion": "",
+      "paisTrae": "",
+      "url": "",
+      "nameProd": "",
+      "precio": 0,
+      "dimensiones": "",
+      "estado": "No tomado"
+    },
+    {
+      "id": 4,
+      "idCliente": 0,
+      "fechaOrden": "hoy",
+      "fechaLimite": "4323",
+      "paisRecibe": "Bolivia",
+      "ciudad": "sdsds",
+      "direccion": "sdsdsd",
+      "paisTrae": "Bolivia",
+      "url": "sddssd",
+      "nameProd": "sdsdsd",
+      "categoria": "Cuidado Personal",
+      "precio": "02323",
+      "dimensiones": "23x24",
+      "estado": "No tomado"
+    }
+  ]
+}
