@@ -4,9 +4,13 @@
 
 export const environment = {
   production: false,
-  serverJSON: "http://localhost:3000",
-  resourceUsers:"/users",
-  resourcePedidos:"/Pedido"
+  serverJSON: "http://localhost:8080",
+  resourceUser:"/api/users",
+  resourceOrder:"/api/orders",
+  resourceShipment:"/api/shipments",
+  resourceComment:"/api/comments",
+  resourceNotification:"/api/notifications",
+  resourceSupport:"/api/support"
 };
 
 /*
