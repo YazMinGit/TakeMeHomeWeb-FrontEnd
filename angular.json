@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "takemehome": {
+    "takemehomeimprove": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/takemehome",
+            "outputPath": "dist/takemehomeimprove",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
@@ -39,7 +40,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "14kb"
+                  "maximumError": "4kb"
                 }
               ],
               "fileReplacements": [
@@ -65,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "takemehome:build:production"
+              "browserTarget": "takemehomeimprove:build:production"
             },
             "development": {
-              "browserTarget": "takemehome:build:development"
+              "browserTarget": "takemehomeimprove:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "takemehome:build"
+            "browserTarget": "takemehomeimprove:build"
           }
         },
         "test": {
@@ -101,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": "267d5dc5-c7b3-4243-b52e-85508dca2afe"
+    "analytics": "6f115764-d58d-498e-81b2-57d20bc2c4f9"
   }
 }
