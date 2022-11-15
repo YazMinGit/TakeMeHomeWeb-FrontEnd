@@ -258,7 +258,7 @@ button{
 }
 @media (max-width:1700px){   
 .content-titulo-pasos{
-    margin-top: 100px;
+    margin-top: 1.5rem;
 }
 .content-titulo-pasos h2{
     font-size: 2rem;
