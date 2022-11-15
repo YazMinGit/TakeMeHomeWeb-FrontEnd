@@ -1,0 +1,66 @@
+<div class="sing-up">
+    <form class="formulario" [formGroup]="register">
+      
+        <div class="datos-min">
+            <mat-form-field class="ancho-sup" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre"  autocomplete="off" matInput>
+            </mat-form-field>
+            <mat-form-field class="ancho-sup" style="margin-left: 4%;" appearance="fill">
+                <mat-label>Nickname</mat-label>
+                <input formControlName="username"  autocomplete="off" matInput>
+            </mat-form-field>
+        </div>
+        <div class="datos-min">
+            <mat-form-field color="accent" class="ancho-sup" appearance="fill">
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input formControlName="fecha" matInput [matDatepicker]="picker2">
+              
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+              </mat-form-field>
+            <mat-form-field class="ancho-sup" style="margin-left: 4%;" appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input formControlName="telefono"  autocomplete="off" matInput>
+            </mat-form-field>   
+        </div>
+        <mat-form-field class="ancho-register" appearance="fill">
+            <mat-label>Pais</mat-label>
+            <mat-select style="font-family: 'SofiaPro';" formControlName="pais">
+       
+            <mat-optgroup style="font-family: 'SofiaPro';" *ngFor="let group of paisesGroup" [label]="group.name"
+                          [disabled]="group.disabled">
+              <mat-option  *ngFor="let pais of group.pais
+              " [value]="pais.value">
+                {{pais.viewValue}}
+              </mat-option>
+            </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="ancho-register" appearance="fill">
+            <mat-label>Correo</mat-label>
+            <input formControlName="usuario" autocomplete="off" matInput>
+        </mat-form-field>
+        <mat-form-field class="ancho-register" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <button style="background-color: transparent; outline:none; border:none; cursor:pointer" type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button (click)="saveUser()" [disabled]="register.invalid" type="button" mat-raised-button color="primary" class="btn-registrar">Registrarse</button>
+    </form>
+    <div class="aviso-register" *ngIf="aviso">
+        <h3 style="font-size: 1.1rem;">Error</h3>
+        <h3>{{mensaje}}</h3>
+        <button (click)="aviso=false; flexFiltro='none' " >Aceptar</button>
+    </div>
+    <div class="exito-register" *ngIf="exito">
+        <h3 style="font-size: 1.1rem;">Aviso</h3>
+        <h3>Usted se ha registrado con éxito. ¡Bienvenido a TakemeHome!</h3>
+        <button routerLink="/entrypage/login" >Aceptar</button>
+    </div>
+</div> 
+<div class="filtro-register" [ngStyle]="{'display':flexFiltro}">
+
+</div>

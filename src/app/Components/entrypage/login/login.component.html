@@ -1,0 +1,29 @@
+<div class="login">
+    <form class="formulario" [formGroup]="login">
+        <mat-form-field class="ancho-login" appearance="fill">
+            <mat-label>Nickname</mat-label>
+            <input formControlName="username"  autocomplete="off" matInput>
+        </mat-form-field>
+        <mat-form-field class="ancho-login" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <button style="background-color: transparent; outline:none; border:none; cursor:pointer" type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button type="button" (click)="validateUser()" mat-raised-button color="primary" [disabled]="login.invalid"  class="btn-registrar">Iniciar Sesión</button>
+    </form>
+    <div class="aviso-register" *ngIf="aviso">
+      <h3 style="font-size: 1.1rem;">Error</h3>
+      <h3>El nickname ingresado es incorrecto o la contraseña ingresada no es la correcta.</h3>
+      <button (click)="aviso=false;flexFiltro='none'" (click)="cambiarFlex()">OK</button>
+  </div>
+  <div class="exito-register" *ngIf="exito">
+    <h3 style="font-size: 1.1rem;">Aviso</h3>
+      <h3>Ahora si eres parte de la aventura. ¡Bienvenido a TakemeHome!</h3>
+      <button routerLink="/app/inicio" (click)="cambiarFlex()">OK</button>
+  </div>
+</div>
+<div class="filtro-login" [ngStyle]="{'display':flexFiltro}">
+
+</div>

@@ -1,2 +1,20 @@
-<app-secondarynavbar></app-secondarynavbar>
-<app-registerlogin></app-registerlogin>
+<app-secondary-navbar></app-secondary-navbar>
+<div class="start-cont">
+    <div class="img-contenedor-entry">
+        <h2>BIENVENIDOS A </h2>
+        <img class="logo-pres" src="../../../assets/Images/TMH-logo.png">
+        <img class="gif-pres" src="../../../assets/Images/output-onlinegiftools.gif"> 
+    </div>
+    <div class="form-cont">
+        <div class="buttons-entry">
+            <div class="title-cont">
+                <h3>{{text}}</h3>
+            </div>
+            <div class="btn-cont-entry">
+                <button  [ngStyle]="{'background': color_button1 , 'opacity':opacidad1}" (click)="registrate()" id="registrate">Registarte</button>
+                <button  [ngStyle]="{'background': color_button2 ,'opacity':opacidad2}" (click)="iniciarSesion()" id="iniciar-sesion">Iniciar Sesión</button>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

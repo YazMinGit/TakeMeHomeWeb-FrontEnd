@@ -1,0 +1,87 @@
+@font-face {
+    font-family: SofiaPro;
+    src: url('../../../assets/Fonts/SofiaProLight.ttf');
+}
+@font-face {
+    font-family: "Coolvetica-cuatro";
+    src: url("../../../assets/Fonts/coolvetica5.otf");
+}
+.start-cont{
+    width: 100vw;
+    height: calc(100vh - 120px);
+    background-color:white;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    overflow: hidden;
+}
+.img-contenedor-entry{
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-color: skyblue;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.buttons-entry{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    margin: 1rem;
+    margin-bottom: 1rem;
+}.title-cont{
+    display: flex;
+    align-items: center;
+}
+.title-cont h3{
+  
+    margin-bottom: 0 !important;
+    font-family: 'SofiaPro';
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+
+}
+.form-cont{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.btn-cont-entry{
+    margin: 1rem;
+}
+.buttons-entry button{
+    height: 40px;
+    cursor: pointer;
+    width: 100px;
+    border: none;
+    font-family: 'SofiaPro';
+    font-weight: bold;
+    color: black;
+
+}
+#registrate{
+    border-radius: 2rem 0rem 0rem 2rem;
+    margin-right: 0.1rem;
+}
+#iniciar-sesion{
+    border-radius: 0rem 2rem 2rem 0rem;
+    margin-right: 1rem;
+}
+.logo-pres{
+    width: 150px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+.gif-pres{
+    width: 300px;
+}
+
+.img-contenedor-entry h2{
+    font-family: 'Coolvetica-cuatro';
+    font-size:3.8rem;
+    font-weight: bold;
+}

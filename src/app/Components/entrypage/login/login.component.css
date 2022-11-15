@@ -1,0 +1,93 @@
+@font-face {
+    font-family: SofiaPro;
+    src: url('../../../../assets/Fonts/SofiaProLight.ttf');
+}
+.login{
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+.formulario{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.ancho-login{
+    width: 80% !important;
+    font-family: 'SofiaPro';
+    color: black;
+}
+.btn-registrar{
+    width: 80%;
+    height: 50px;
+    font-family: 'SofiaPro';
+    font-weight: bold;
+    background-color: skyblue;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+.mat-form-field-ripple{
+    background-color: skyblue !important;
+    height: 3px;
+}
+.filtro-login{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 120px;
+    left: 0;
+    z-index: 2;
+}
+.aviso-register, .exito-register{
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    top: 40%;
+    border-radius: 1rem;
+    z-index: 9;
+
+}
+.aviso-register h3, .exito-register h3{
+    font-weight: bold;
+    font-family: 'SofiaPro';
+    color: black;
+    margin-top: 1rem;
+}
+.aviso-register button, .exito-register button{
+    width: 100%;
+    height: 54px;
+    border: none;
+    border-top: 2px solid #d4d4d4;
+    font-weight: bold;
+    font-family: 'SofiaPro';
+    background-color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: skyblue;
+    font-size: 1rem;
+    font-weight: bold;    justify-content: center;
+    align-self: flex-end;
+    margin-top: 0.3rem;
+    border-radius: 0rem 0rem  1rem 1rem;
+    justify-self: right;
+}
+.aviso-register button:hover,.exito-register button:hover{
+    background: rgba(182, 181, 181, 0.35)
+}
