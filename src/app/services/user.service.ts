@@ -1,61 +1,41 @@
-
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { User } from './../models/user';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
-import { Observable } from 'rxjs';
+import { User } from 'src/models/User';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-
-  ruta:string = environment.serverJSON+environment.resourceUsers;
-
-
-  constructor(private http:HttpClient) { }
-  addUser(user: User) {
+  resourcePath:string = environment.serverJSON+environment.resourceUser;
+  constructor(private http:HttpClient) {
     
-    return this.http.post<User>(this.ruta,user);
-
-    //return this.http.post<User>("http://localhost:3000/users",user);
-    
-    //this.employees.unshift(employee);
-  }
- 
-  getUsers() {
-   
-    return this.http.get<User[]>(this.ruta);
-
-    //return this.http.get<User[]>("http://localhost:3000/users");
-  }
-  getUser(id: number) {
-
-    return this.http.get<User>(this.ruta+"/"+id.toString());
-
-    //return this.http.get<User>("http://localhost:3000/users"+"/"+id.toString());
-
-    //return this.employees.slice();
-  }
-
-
-  updateUser(user: User) {
-
-    return this.http.put<User>(this.ruta+"/"+user.id.toString(),user);
-
-    //return this.http.put<User>("http://localhost:3000/users"+"/"+user.id.toString(),user);
-
-    //this.employees.unshift(employee);
-  }
-
-  deleteUser(id: number) {
-    
-    return this.http.delete(this.ruta+"/"+id.toString());
-    
-    //return this.http.delete("http://localhost:3000/user"+"/"+id.toString());
-
-    //this.employees.unshift(employee);
-  }
- 
+   }
+  
+   getUsers(){
+      return this.http.get<User[]>(this.resourcePath);
+   }
+   getUser(id:number){
+    return this.http.get<User>(this.resourcePath+"/"+id.toString());
+   }
+   addUser(user:User){
+    return this.http.post<User>(this.resourcePath,user);
+   }
+   validateUser(username:string,psw:string){
+    return this.http.get<User>(this.resourcePath+"/username/"+username+"/password/"+psw);
+   }
+   editUser(id:number,user:User){
+    return this.http.put<User>(this.resourcePath+"/"+id.toString(),user);
+   }
+   validateRepeatUsername(username:string){
+    return this.http.get<User>(this.resourcePath+"/username/"+username);
+   }
+   changePassword(id:number,user:User){
+    return this.http.put<User>(this.resourcePath+"/"+id.toString()+"/password",user);
+   }
+   changeImage(id:number, user:User){
+    return this.http.put<User>(this.resourcePath+"/"+id.toString()+"/image",user);
+   }
+   changeCont(id:number,user:User){
+    return this.http.put<User>(this.resourcePath+"/"+id.toString()+"/cont",user);
+   }
 }
