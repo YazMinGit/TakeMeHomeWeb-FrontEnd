@@ -1,0 +1,93 @@
+
+<mat-sidenav-container   class="example-container allcontent" style="overflow: hidden;" >
+  <mat-sidenav  #sidenav [mode]="mode.value || 'over'" class="sidenav" position="end" style="overflow: hidden !important;">
+    <div class="cont-sup" style="overflow: hidden;">
+      <button class="back-button" mat-button (click)="sidenav.toggle()"><mat-icon style="scale: 1.5; color: black;" class="flecha">arrow_right_alt</mat-icon></button>
+      <div class="cont-text-conf"  style="overflow: hidden;">
+        <h4 >Menu</h4>
+      </div>
+    </div>
+
+    <div class="list-slider" style="overflow: hidden;">
+      <div class="perfil-content" style="overflow: hidden;">
+          <img src={{perfilUser}}>
+          <h4>{{nameUser}}</h4>
+      
+      </div>        
+      <ul style="overflow: hidden;">
+          <li routerLink="/app/inicio" (click)="sidenav.toggle(); changeText()" ><mat-icon class="icon-li">apps</mat-icon>Aplicación</li>
+          <li routerLink="/app/perfil/comentarios" (click)="sidenav.toggle();changeText1()"><mat-icon class="icon-li">account_circle</mat-icon>Perfil</li>
+          <li  routerLink="/app/resumen" (click)="sidenav.toggle();changeText2()"><mat-icon class="icon-li" >format_list_numbered</mat-icon>Resumen</li>
+          <li  routerLink="/app/soporte" (click)="sidenav.toggle();changeText3()"><mat-icon class="icon-li">contact_support</mat-icon>Soporte</li>
+          <li (click)=" cerrarMessage=true;sidenav.toggle();displayFiltro='flex'"><mat-icon class="icon-li">exit_to_app</mat-icon>Cerrar Sesión</li>
+      </ul>
+      <div class="copy">
+          <p>LoveLife 2022 ©</p>
+      </div>
+    </div>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content class="cont-total" style="background-color: white;">
+      
+      <mat-toolbar class="navbar">
+          <div class="logo">
+              <img src="../../../../assets/Images/TMH-logo.png">
+          </div>
+          <div class="welcome">
+              <h2>{{texto}}</h2>
+          </div>
+          <div class="btn-menu">
+              <button class="btn-bell" (click)="cerrar()"><mat-icon [matBadge]="notificationCount" matBadgeSize="small" class="icon-bell" style="scale:1.5;color:black" matBadgeColor="warn">notifications</mat-icon></button>
+              <button mat-icon-button class="example-icon"   (click)="sidenav.toggle();notification=false"
+              aria-label="Example icon-button with menu icon">
+                Menu
+              </button>
+          </div>
+         
+      </mat-toolbar>
+     
+      <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div class="filtro-cerra-sesion" [ngStyle]="{'display':displayFiltro}">
+
+</div>
+<div class="cerrar-sesion" *ngIf="cerrarMessage">
+  <h3>Aviso</h3>
+  <h3>¿Desea cerrar sesión?</h3>
+ 
+  <div class="btn-div-sesion">
+    <button (click)="cerrarMessage=false; displayFiltro='none';" style="color:skyblue;font-weight:bold">Cancelar</button>
+    <button (click)="cerrarSesion()" style="border-radius: 0rem  0rem 1rem 1rem; border:none; border-top:#d4d4d4 2px solid">Aceptar</button>
+  </div>
+</div>  
+
+<div  class="notifications" *ngIf="notification">
+  <h3>Notificaciones</h3>
+  <div class="notification-content">
+    <mat-card *ngFor="let not of notificationArray" class="example-card card">
+  <mat-card-header>
+    <div class="img-cont" style=" width: 70px; height: 70px;"mat-card-avatar class="example-header-image">
+      <img class="img-card" src={{not.urlImage}}>
+    </div>
+    <mat-card-title class="title">{{not.title}}</mat-card-title>
+    <mat-card-subtitle class="sub-title">{{not.description}}</mat-card-subtitle>
+    <mat-icon (click)="changeState(not.id)" class="close">close</mat-icon>
+  </mat-card-header>
+
+</mat-card>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

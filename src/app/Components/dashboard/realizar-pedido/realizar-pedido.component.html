@@ -1,0 +1,128 @@
+<div class="realizar-pedido" >
+    <h2>Realizar Pedido</h2>
+    <div class="cont-total">
+      <mat-stepper #stepper class="cont-stepper" >
+        <mat-step errorMessage="Datos requeridos.">
+            <form [formGroup]="ubicacionDestino" class="formulario">
+                <ng-template matStepLabel>Detalla la ubicación de destino</ng-template>
+                <mat-form-field style="background-color: white; color: #04bfbf;" class="ancho" style="font-family: 'Sofia-Pro';" appearance="legacy">
+                    <mat-label style="color: black;">Pais</mat-label>
+                   
+                    <mat-select   formControlName="paisDestino" style="font-family: 'Sofia-Pro';">
+                      
+                    <mat-optgroup style="font-family: 'Sofia-Pro';"  *ngFor="let group of paisesGroup" [label]="group.name"
+                                  [disabled]="group.disabled">
+                      <mat-option style="font-family: 'Sofia-Pro';" *ngFor="let pais of group.pais
+                      " [value]="pais.value">
+                        {{pais.viewValue}}
+                      </mat-option>
+                    </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="ancho" appearance="legacy">
+                    <mat-label style="color: black;">Ciudad </mat-label>
+                    <input formControlName="ciudadDestino" autocomplete="off" matInput placeholder="Placeholder">
+                    <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix>location_city</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="ancho" appearance="legacy">
+                    <mat-label style="color: black;">Dirección </mat-label>
+                    <input formControlName="direccionDestino" autocomplete="off" matInput  placeholder="Placeholder">
+                    <mat-icon  style="color: rgba(41, 127, 177, 0.966);"matSuffix>location_on<</mat-icon>
+                </mat-form-field>
+                <mat-form-field color="accent" class="ancho" appearance="legacy">
+                  <mat-label style="color:black ;">Fecha Limite:</mat-label>
+                  <input [matDatepickerFilter]="myFilter" formControlName="fechaLimite"matInput [matDatepicker]="picker2">
+                
+                  <mat-datepicker-toggle style="color: rgba(41, 127, 177, 0.966); scale:1.5" matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+                
+                 
+              </form>
+              <button class="btn-cont" mat-button matStepperNext [disabled]="ubicacionDestino.invalid">Siguiente</button>
+        </mat-step>
+        <mat-step errorMessage="Address is required." >
+            <form [formGroup]="ubicacionOrigen" class="formulario2">
+                <ng-template matStepLabel>Detalla la ubicación de origen</ng-template>
+                <mat-form-field style="background-color: white; color: #04bfbf;" class="ancho" appearance="legacy">
+                    <mat-label style="color: black;">Pais</mat-label>
+                   
+                    <mat-select formControlName="paisOrigen">
+                      
+                    <mat-optgroup  *ngFor="let group of paisesGroup" [label]="group.name"
+                                  [disabled]="group.disabled">
+                      <mat-option *ngFor="let pais of group.pais
+                      " [value]="pais.value">
+                        {{pais.viewValue}}
+                      </mat-option>
+                    </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="ancho" appearance="legacy">
+                    <mat-label style="color: black;">Ciudad </mat-label>
+                    <input formControlName="ciudadOrigen" autocomplete="off" matInput placeholder="Placeholder">
+                    <mat-icon style="color: rgba(41, 127, 177, 0.966);" matSuffix>location_city</mat-icon>
+                </mat-form-field>
+                 
+              </form>
+              <button class="btn-cont" mat-button matStepperNext [disabled]="ubicacionOrigen.invalid">Siguiente</button>
+        </mat-step>
+        <mat-step errorMessage="Address is required.">
+            <form [formGroup]="producto" class="formulario">
+                <ng-template matStepLabel>Detalle del producto</ng-template>
+                <mat-form-field class="ancho" appearance="legacy">
+                    <mat-label style="color: black;">URL del producto </mat-label>
+                    <input formControlName="urlProducto" autocomplete="off" matInput placeholder="Placeholder" >
+                    <mat-icon style="color: rgba(41, 127, 177, 0.966);" matSuffix>personal_video</mat-icon>
+                    
+                </mat-form-field>
+                <div class="ancho-media">
+                  <mat-form-field class="ancho-precio" appearance="legacy">
+                    <mat-label style="color: black;">Nombre del producto</mat-label>
+                    <input formControlName="nombreProducto" autocomplete="off" matInput placeholder="Placeholder">
+               
+                    <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix>shopping_cart<</mat-icon>
+                  
+                </mat-form-field>
+                <mat-form-field class="ancho-product" appearance="legacy">
+                  <mat-label style="color: black;">Categoría</mat-label>
+                  <mat-select [(ngModel)]="selectedValue" formControlName="categoriaProducto">
+                    <mat-option *ngFor="let category of categories" [value]="category.value">
+                      {{category.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </div>
+               
+             
+                  <div class="ancho-media">
+                  <mat-form-field class="ancho-precio" appearance="legacy">
+                    <mat-label style="color: black;">Precio</mat-label>
+      
+                    <input type="number" formControlName="precioProducto"  autocomplete="off" matInput  placeholder="Placeholder">
+                    <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix> money</mat-icon>
+                  
+                  </mat-form-field>
+                  <mat-form-field class="ancho-product" appearance="legacy">
+                    <mat-label style="color: black;">Dimensiones</mat-label>
+                    <input formControlName="dimensionesProducto" autocomplete="off" matInput  placeholder="Placeholder">
+                  
+                    <mat-icon style="color: rgba(41, 127, 177, 0.966);" matSuffix> work</mat-icon>
+                  
+                  </mat-form-field>
+                </div>
+              </form>
+              <button class="btn-cont"  [disabled]="producto.invalid"  (click)="aviso=true; filtroDisplay='flex'" mat-button matStepperNext>Enviar</button>
+        </mat-step>
+      </mat-stepper>
+      
+</div>
+<div class="div-import-profile" *ngIf="aviso">
+  <h3>Aviso</h3>
+  
+  <h3>¿Desea realizar su pedido?</h3>
+  <button class="btn-validate-profile" (click)="filtroDisplay='none'; saveOrder();aviso=false" style="margin-top: 1rem;" type="button">Realizar</button>
+  <button class="btn-validate-profile" (click)="filtroDisplay='none';aviso=false"  style="color: rgb(72, 72, 72);" type="button">Cambiar</button>
+ 
+</div>
+<div class="filtro-realizar-pedido" [ngStyle]="{'display':filtroDisplay}"></div>

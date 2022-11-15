@@ -1,115 +1,103 @@
-<div class="profile-content">
-  <div class="profile-main">
-    <div class="personal-data">
-      <div class="foto-perfil">
-        <div class="miperfil">
-          <h3>Mi Perfil</h3>
-          <div class="line"></div>
-        </div>
-        <div class="image-content">
-          <img src="../../../../assets/Images/FRENTE-NITIDA.jpg">
-        <div class="content-estrellas">
-          <h4>3</h4>
-          <mat-icon style="color: #04BFBF;">star</mat-icon>
-        </div>
-        </div>
-        
-      </div>
-      <div class="content-datos-general">
-        <div class="content-subtitulo">
-        <h3>Nombres:</h3>
-        </div>  
-        <div class="content-datos">
-        <mat-icon>account_box</mat-icon>
-        <p [innerText]="nombrecompleto"></p>
-      </div>
-      </div>
-      <div class="content-datos-general">
-        <div class="content-subtitulo">
-        <h3>Fecha de Nacimiento:</h3>
-        </div>
-        <div class="content-datos">
-          <mat-icon>calendar_today</mat-icon>
-          <p [innerText]="fecha_nac"></p>
-        </div>
-      </div>
-      <div class="content-datos-general">
-        <div class="content-subtitulo">
-        <h3>Telefono:</h3>
-        </div>
-        <div class="content-datos">
-          <mat-icon> phone</mat-icon>
-          <p [innerText]="telefono"></p>
-        </div>
-      </div>
-      <div class="content-datos-general">
-        <div class="content-subtitulo">
-        <h3>País:</h3>
-        </div>
-        <div class="content-datos">
-          <mat-icon>flag</mat-icon>
-          <p [innerText]="pais"></p>
-        </div>
-      </div>
-      <div class="content-datos-general">
-        <div class="content-subtitulo">
-        <h3>Correo Electrónico:</h3>
-        </div>
-        <div class="content-datos">
-          <mat-icon> email</mat-icon>
-          <p [innerText]="correo"></p>
-        </div>
-      </div>
+<div class="perfil">
+    <div class="img-sup">
+
     </div>
-     <div class="secondary-content">
-      <div class="foto-perfil">
-        <div class="miperfil actualizar">
-          <div class="titulo-actualizar">
-            <h3>Actualizar datos</h3>
-            <div class="line-update"></div>
-          </div>
-         
+ 
+    <div class="perfil-cont"><img src={{urlImg}}></div>
+    <div class="part-sup-img-perfil" (click)="changeFoto=true; filtroFlex='flex'">
+        <mat-icon class="icon-camera">camera_alt</mat-icon>
+    </div>
+    <div class="cont-perfil">
+        <div class="cont-left">
+            <div class="info-cont">
+            <h3 [innerText]="nombrecompleto"></h3>
+            <div class="pais">
+                <mat-icon class="icon-lugar" style="color: rgba(97, 192, 247, 0.966); margin-right: 0.1rem;">room</mat-icon><h4 [innerText]="pais"></h4>
+            </div>
+            <div class="cont-info-sec">
+                
+                <h4>Correo: </h4> 
+                <div class="cont-info-ter">
+                    <mat-icon class="icon-ter"> email</mat-icon> <p [innerText]="correo"></p>
+                </div>
+            </div>
+            <div class="cont-info-sec">
+                <div class="cont-info-ter"></div>
+                <h4>Telefono: </h4> 
+                <div class="cont-info-ter">
+                    <mat-icon class="icon-ter"> call</mat-icon>  <p [innerText]="telefono"></p>
+                </div>
+                
+            </div>
+            <div class="cont-info-sec">
+                
+                <h4>Fecha de Nacimiento: </h4> 
+                <div class="cont-info-ter">
+                    <mat-icon class="icon-ter">today</mat-icon><p >{{fecha_nac| date}}</p>
+                </div>
+               
+            </div>
+            </div>
+        
         </div>
-      </div>
-      <div class="change-content">
-        <form style="display:flex ; flex-direction:column;align-items:center; width: 100%;" [formGroup]="update">
-        <mat-form-field appearance="legacy" class="inputcontent">
-          <mat-label  class="mat" >Actualiza tu Correo</mat-label>
-          <input class="input" formControlName="usuario" autocomplete="off" matInput placeholder="Ingresa tu correo electrónico">
-          <mat-icon matSuffix>email</mat-icon>
-         
-        </mat-form-field>
-        <mat-form-field appearance="legacy" class="inputcontent">
-          <mat-label class="mat" >Actualiza tu numero telefonico</mat-label>
-          <input class="input" formControlName="telefono" autocomplete="off"  matInput placeholder="Ingresa tu numero ">
-          <mat-icon matSuffix>phone</mat-icon>
-         
-        </mat-form-field>
-       
-        <button (click)="editUser()" mat-raised-button color="primary"  style="background-color: #04BFBF; border-radius: 2rem; font-family:'Sofia-Pro';" [disabled]="update.invalid" class="btn-guardarcambios">Guardar cambios</button>
-        </form>
-      </div>
-      <div class="comentarios-content">
-        <div class="foto-perfil">
-          <div class="miperfil">
-            <h3>Comentarios</h3>
-            <div class="line-update"></div>
-          </div>
+        <div class="cont-rigth">
+            <div class="slider">
+                <div (click)="inicio();"  [ngStyle]="{'opacity':opacidad1}" class="cont-slider">
+                    <h4>Comentarios</h4>
+                </div>
+                <div (click)="medio()" [ngStyle]="{'opacity':opacidad2}" class="cont-slider">
+                    <h4>Reclamos</h4>
+                </div>
+                <div (click)="ultimo()"  [ngStyle]="{'opacity':opacidad3}" class="cont-slider">
+                    <h4>Edición de Datos</h4>
+                </div>
+                <div [ngStyle]="{'left': izq}" class="linea"></div>
+            </div>
+            <div style="width:100%;height:100%">
+              <router-outlet></router-outlet>
+            </div>
         </div>
-        <div class="content-comments">
-        <div class="comentarios">
-          <div class="comentario">
-            
-          </div>
-          <div class="comentario">
-            
-          </div>
-          <div class="comentario tres">
-           
-          </div>
-        </div>
-      </div>
-      </div>
-     </div>
-  </div>
+      
+      
+    </div>
 </div>
+<div class="div-import-img" *ngIf="changeFoto">
+    <h3>Cambia tu foto de perfil</h3>
+    <p>Necesitarás colocar el link de tu imagen</p>
+    <form class="form-img" [formGroup]="imageValidate" >
+    <mat-form-field appearance="legacy" style="width: 90%; font-family: 'Sofia-Pro  ';">
+        <mat-label>Link de la imagen</mat-label>
+        <input formControlName="imgUrl" matInput placeholder="Placeholder">
+        <mat-icon matSuffix>link</mat-icon>
+       
+      </mat-form-field>
+    <button class="btn-validate" (click)="enviarImagen(); changeFoto=false; msgfotovalidate=true" type="button">Enviar</button>
+    <button class="btn-validate" (click)="changeFoto=false; filtroFlex='none'" style="color: rgb(72, 72, 72);" type="button">Cerrar</button>
+    </form>
+   
+</div>
+<div class="div-import-img" *ngIf="msgfotovalidate">
+    <h3>Visualiza tu imagen</h3>
+    <img id="image-cont" src={{imgvalidation}} style="width: 100px; height:90px; margin-bottom: 10px;">
+    
+    <button class="btn-validate" (click)="validar()" type="button">Cambiar</button>
+    <button class="btn-validate" (click)="msgfotovalidate=false; changeFoto=true;" style="color: rgb(72, 72, 72);" type="button">Regresar</button>
+   
+</div>
+<div class="div-msg-acp" *ngIf="avisomsg">
+    <h3>Aviso</h3>
+    <p>Su foto de perfil ha sido actualizada con éxito.</p>
+    
+    <button class="btn-validate-msg" (click)="avisomsg=false; filtroFlex='none'; msgfotovalidate=false;refrescarPagina()" type="button">Continuar</button>
+    
+   
+</div>
+<div class="div-msg-err" *ngIf="errormsg">
+    <h3>Error</h3>
+    <p>La url que usted ha ingresado no pertenece a ninguna imagen. Vuelva Intentarlo.</p>
+    
+    <button class="btn-validate-msg" (click)="errormsg=false; filtroFlex='none'; msgfotovalidate=false"  type="button">Continuar</button>
+    
+   
+</div>
+<div class="filtro-profile" [ngStyle]="{'display':filtroFlex}"></div>

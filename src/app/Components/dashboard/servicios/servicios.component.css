@@ -1,0 +1,85 @@
+
+body > app-root > app-main > mat-sidenav-container > mat-sidenav-content > app-servicios > mat-tab-group > mat-tab-header{
+    border: none !important;
+}
+.content-div{
+    color: white;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+   
+}
+.body > app-root > app-main > mat-sidenav-container > mat-sidenav-content > mat-tab-group{
+    background-color: skyblue !important;
+}
+.mat-tab-group{
+    color: white;
+    background-color:  skyblue !important;;
+    overflow: hidden !important;
+    height: calc(100vh - 90px);
+}
+.mat-ink-bar{
+    background-color: white !important;
+    height: 4px !important;
+}
+.mat-tab-body{
+    height: calc(100vh - 90px) !important;
+}
+.mat-tab-body-content{
+    height: 100%!important;
+}
+.mat-tab-label{
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0;
+    font-family: 'SofiaPro';
+    height: 90px !important;
+}
+.mat-tab-link {
+    opacity: 0;
+  }
+.mat-tab-label-active{
+    color: white;
+  
+    background-color: transparent;
+}
+.mat-tab-label-focus{
+    color: white;
+    background-color: transparent;
+}
+.mat-tab-body-content{
+    width: 100vw;
+}
+.mat-tab-label {
+    background: rgba(0,0,0,0);
+  }
+
+  .mat-tab-label:focus { background-color: transparent !important; color: white !important; } 
+
+
+.mat-button-wrapper{
+    font-size: 'SofiaPro' !important;
+}
+
+@media (min-width:1900px){
+    .mat-tab-group{
+        height: calc(100vh - 150px) !important;
+      
+    }
+    
+    .mat-tab-label{
+        height: 150px !important;
+        width: 200px !important;
+    }
+   
+    .icon-tab{
+        scale: 2.5 !important;
+    }
+    body > app-root > app-main > mat-sidenav-container > mat-sidenav-content > app-servicios > mat-tab-group > mat-tab-header > div > div{
+        width: 100% !important;
+    }
+    
+}

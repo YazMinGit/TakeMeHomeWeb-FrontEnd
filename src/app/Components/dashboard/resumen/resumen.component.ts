@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumenComponent implements OnInit {
   panelOpenState = false;
+  loading = false;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+  fakeLoading(){
+    this.loading =true;
+   setTimeout(() => {
 
+
+    this.loading=false;
+   
+    }, 1500);
+  }
 }

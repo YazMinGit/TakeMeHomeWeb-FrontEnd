@@ -1,0 +1,376 @@
+@font-face {
+    font-family: SofiaPro;
+    src: url('../../../../assets/Fonts/SofiaProLight.ttf');
+}
+.mat-sidenav-container{
+    width: 100vw;
+    height: 100vh;
+ 
+    overflow: hidden;
+    font-family: 'SofiaPro';
+}
+.navbar{
+    background-color: white;
+    display: grid !important;
+    grid-template-columns: 0.2fr 0.6fr 0.2fr !important;  
+    align-items: center;
+    justify-items: center;  
+    height: 90px;
+    overflow: hidden;
+    color: black;
+    font-family: 'SofiaPro';
+ 
+}
+.navbar div{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.logo img{
+    width: 120px;
+    
+}
+.welcome{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.welcome h2{
+    font-size: 2.5rem;
+    font-family: 'SofiaPro';
+  
+}
+.sidenav{
+    width: 25%;
+    display: flex;
+    overflow: hidden;
+    background:white;
+}
+.btn-menu{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    overflow: hidden;
+    height: 70% !important;
+    width: 100% !important;
+    border-left: 2px solid black;
+}
+.btn-menu button{
+    font-size: 1.2rem;
+    font-family: 'SofiaPro';
+    margin: 1rem;
+    font-weight: bold;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 4rem;
+
+}
+
+
+.perfil-content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.perfil-content img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5rem;
+  }
+  .perfil-content h4{
+    font-size: 1.2rem;
+    font-family: 'SofiaPro';
+    font-weight: 700;
+    margin: 1rem;
+   
+  }
+
+.list-slider{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+ 
+}
+.list-slider ul{
+    width: 80%;
+    margin: 0;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+}
+.list-slider li{
+    margin: 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.copy{
+    position: absolute;
+    bottom: 0;
+    
+}
+.icon-li{
+    margin-right: 0.5rem;
+}
+.pointer{
+    width: 120px;
+}
+
+.back-button{
+    background-color:transparent;
+    border: none;
+    outline: none;
+    width: 12%;
+    cursor: pointer;
+   
+}
+.btn-bell{
+    width: 60px !important;
+    height: 60px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+ 
+}
+.cont-sup{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: rgba(154, 231, 236, 0.37);
+    align-items: center;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+.cont-text-conf{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+.cont-text-conf h4{
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+
+}
+.cerrar-sesion{
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 1rem;
+    z-index: 12;
+}
+.btn-div-sesion{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   margin-top: 1rem;
+}
+.cerrar-sesion h3{
+    font-family: 'Sofia-Pro';
+    margin: 0.8rem 1rem;
+}
+.btn-div-sesion button{
+   
+    border: none;
+    border-top:#d4d4d4 2px solid;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 38px;
+    cursor: pointer;
+    font-size: 1rem;
+    
+    font-family: 'Sofia-Pro';
+}
+.cerrar-sesion button:hover,.cerrar-sesion button:hover{
+    background: rgba(182, 181, 181, 0.35)
+}
+.filtro-cerra-sesion{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 10;
+}
+.notifications{
+    width: 32vw;
+    height: calc(100vh - 90px);
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: 15;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 3px solid black;
+}
+.notification-content{
+    width: 80%;
+    height: 85%;
+    padding: 10px;
+    border-radius: 1rem;
+
+    margin-left: 10%;
+    background-color: skyblue;
+    overflow-y: auto;
+}
+
+.notification-content::-webkit-scrollbar-track {
+    border-radius: 0.125rem;
+    background-color: lightgray;
+  }
+  .notification-content::-webkit-scrollbar {
+    width: 0.25rem;
+    border-radius: 0.125rem;
+    margin-left: 0.3rem;
+  }
+  .notification-content::-webkit-scrollbar-thumb {
+    border-radius: 0.125rem;
+    background-color: gray;
+}
+.notifications h3{
+    margin: 5%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+}
+.card{
+ margin: 0.5rem;
+ position: relative;
+ height: 110px;
+
+}
+.close{
+    position: absolute;
+    right: 1rem;
+    top: 35%;
+    cursor: pointer;
+    scale: 1.1;
+}
+.close:hover{
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.title{
+    font-family: 'Sofia-Pro';
+    font-size: 0.5rem;
+    font-weight: bold;
+}
+.sub-title{
+    font-family: 'Sofia-Pro';
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+   
+}
+
+.img-card{
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width:1900px){
+    
+    .notifications{
+        height:calc(100vh - 150px) ;
+        top: 150px;
+        width: 25vw;
+    }
+    .title{
+        font-family: 'Sofia-Pro';
+        font-size: 0.6rem;
+        font-weight: bold;
+    }
+    .sub-title{
+        font-family: 'Sofia-Pro';
+        font-size: 1rem;
+       
+    }
+    .navbar{
+        height: 150px;
+    }
+    .btn-bell{
+        width: 90px !important;
+        height: 90px !important;
+    }
+    .btn-menu button{
+        width: 130px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    .icon-bell{
+        scale: 2.3 !important;
+    }
+    .logo img{
+        width: 160px;
+    
+    }
+    .welcome h2{
+        font-size: 3rem;
+    }
+    .cont-sup{
+        height: 100px;
+    }
+    .cont-text-conf h4{
+        font-size: 1.7rem;
+    }
+    .flecha{
+        scale: 2 !important;
+    }
+    .list-slider li{
+        margin: 2rem;
+        font-size: 1.8rem;
+    }
+    .list-slider ul{
+        margin-top: 1.5rem;
+    }
+    .icon-li{
+        scale: 1.3;
+        margin-right: 0.8rem;
+    }
+    .perfil-content h4{
+        font-size: 1.8rem;
+    }
+    body > app-root > app-main > mat-sidenav-container > mat-sidenav > div > div.list-slider.ng-tns-c188-0 > div.copy > p{
+        font-size: 1.1rem;
+        
+    }
+}

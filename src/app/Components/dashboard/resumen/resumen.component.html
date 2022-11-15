@@ -1,41 +1,47 @@
-<div class="main-content">
-    <div class="opciones-content">
-        <mat-accordion>
-            <mat-expansion-panel >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                    <b style=" font-family: 'Sofia-Pro'">Mis Viajes</b>
-                </mat-panel-title>
-                <mat-panel-description style=" font-family: 'Sofia-Pro'">
-                  Despliegue para ver las opciones
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div class="btn-content">
-                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Viajes en progreso</button>
-                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Historial de entregas</button>
-                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Comentarios</button>
-              
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <b style=" font-family: 'Sofia-Pro'; font-weight: bold;">Mis Compras</b>
-                </mat-panel-title>
-                <mat-panel-description style=" font-family: 'Sofia-Pro'">
-                  Despliegue para ver las opciones
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div class="btn-content">
-                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;" routerLink="/dashboard/resumen/mispedidos">Mis pedidos</button>
-                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Historial</button>
-                <button mat-raised-button color="primary" style="border-radius: 2rem; width: 60%; height: 50px; background-color:#04bfbf; font-family: 'Sofia-Pro'; font-size: 1rem;font-weight: bold; margin-top: 1rem;">Puntos acumulados</button>
-              
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
+<div class="resumen-cont">
+    <div class="cont-left">
+      <mat-accordion style="width: 100%;">
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                <b style=" font-family: 'Sofia-Pro'">Mis Encargos</b><mat-icon style="margin-left: 1rem ;">flight_takeoff</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description style=" font-family: 'Sofia-Pro'">
+              Despliegue para ver las opciones
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="btn-content">
+            <button (click)="fakeLoading()" mat-raised-button color="primary" routerLink="/app/resumen/sendnopay" class="btn-resumen" >Encargos solicitados</button>
+            <button (click)="fakeLoading()" mat-raised-button color="primary" routerLink="/app/resumen/sendpay" class="btn-resumen" >Encargos en proceso</button>
+            <button (click)="fakeLoading()" mat-raised-button color="primary" class="btn-resumen" routerLink="/app/resumen/historialcobros">Historial de cobros</button>
+          
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="title-panel">
+              <b style=" font-family: 'Sofia-Pro'; font-weight: bold;">Mis Compras</b><mat-icon style="margin-left: 0.5rem;">shopping_cart</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description style=" font-family: 'Sofia-Pro'">
+              Despliegue para ver las opciones
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="btn-content">
+            <button (click)="fakeLoading()" mat-raised-button color="primary" routerLink="/app/resumen/noshipment" class="btn-resumen">Pedidos solicitados</button>
+            <button (click)="fakeLoading()" mat-raised-button color="primary" routerLink="/app/resumen/shipment" class="btn-resumen" >Pedidos aceptados</button>
+            <button (click)="fakeLoading()" mat-raised-button color="primary" class="btn-resumen" routerLink="/app/resumen/shipmentpay">Pedidos en progreso</button>
+            <button (click)="fakeLoading()" mat-raised-button color="primary" class="btn-resumen" routerLink="/app/resumen/historialpagos">Historial de pagos</button>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
-    
-<router-outlet></router-outlet>
+    <div class="cont-right">
+      <div class="content-loading" *ngIf="loading" >
+        <mat-spinner class="spinner" diameter="70"></mat-spinner>
+        <h2 style="font-family: Sofia-Pro; font-weight:bold;margin-top:1rem;color:rgba(46, 46, 139, 0.767)">Cargando recursos</h2>
+      </div>
+      
+        <router-outlet *ngIf="!loading"></router-outlet>
+    </div>
 </div>

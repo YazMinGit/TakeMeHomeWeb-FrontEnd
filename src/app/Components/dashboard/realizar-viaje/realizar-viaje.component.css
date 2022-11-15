@@ -1,0 +1,293 @@
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../assets/Fonts/sofiapro-light.otf");
+}
+.realizar-viaje{
+
+    width: 100vw;
+    background-color: skyblue !important;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.realizar-viaje h2{
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    margin-top: 1rem;
+}
+.table{
+    width: 80%;
+    height: 20vh;
+    font-family: 'Sofia-Pro';
+}
+.filtro-cont{
+    width: 100%;
+}
+.table-cont{
+    width: 100vw;
+    display: flex;
+    box-shadow: none;
+    align-items: center;
+    flex-direction: column;
+}
+.paginator{
+    width: 80vw;
+    background-color: rgba(89, 129, 145, 0.568);
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    color: black;
+}
+.filtro{
+    width: 20%;
+    margin-left: 10vw;
+    font-family: 'Sofia-Pro';
+    color: black;
+}
+.mat-form-field-ripple{
+    background-color: white !important;
+}
+#mat-tab-content-0-2 > div > app-realizar-viaje > div > mat-form-field > div > div.mat-form-field-underline.ng-tns-c124-16.ng-star-inserted{
+    background-color: white !important;
+}
+.mat-form-field-appearance-standard .mat-form-field-underline{
+    background-color: red !important;
+}
+.mat-form-field .mat-focused .mat-form-field-ripple{
+    background-color: red !important;
+}
+td, th {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+.info-viaje{
+    border: 3px solid black;
+    position: absolute;
+    margin: auto;
+    top: 8.5vh;
+    left: 0;
+    right: 0;
+    width: 60vw;
+    height: 62vh;
+    font-family: 'Sofia-Pro';
+}
+.perfil-img img{
+    width: 80px;
+    height: 80px    ;
+    margin-bottom: 2rem;
+    border-radius: 3rem;
+}
+.title,.sub-title{
+    margin-left: 2rem;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+.title{
+    display: flex;
+    align-items: center;
+    
+}
+.title p{
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    text-decoration:underline;
+    color: skyblue;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.sub-title{
+    margin-left: 1.8rem !important;
+    display: flex;
+    align-items: center;
+}
+.des-product{
+    display: flex;
+    align-items: center;
+    margin:0.5rem;
+ 
+}
+.btn-info-ped{
+    width: 160px;
+    background-color: skyblue;
+    font-family: 'Sofia-Pro';
+    border-radius: 2rem;
+    height: 45px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.cont h4{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    margin-top: 0.5rem;
+    font-size: 1.3rem !important;
+}
+.des-product h5{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.sub-title p{
+    margin-bottom: 0;
+}
+.url-product{
+    display: flex;
+    align-items: center;
+    width: 180%;
+    height: 80px;
+    overflow-x: auto;
+    margin:0.5rem;
+}
+.url-product::-webkit-scrollbar-track {
+    border-radius: 0.125rem;
+    background-color: lightgray;
+  }
+  .url-product::-webkit-scrollbar {
+    width: 0.25rem;
+    border-radius: 0.125rem;
+
+  }
+  .url-product::-webkit-scrollbar-thumb {
+    border-radius: 0.125rem;
+    background-color: gray;
+}
+.url-product h5{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.cont-prin-prod{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+.header-card{
+    position: relative;
+}
+.cont-btn-card{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+.cont-btn-card button{
+    margin: 0.5rem;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    cursor: pointer;
+    border-radius: 2rem;
+    background: rgba(164, 215, 235, 0.788);
+}
+.aceptar-pedido{
+    width: 350px;
+    height: 295px;
+    background-color:#FFFFFF;
+    border: 2px solid black;
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+ 
+}
+.aceptar-pedido h3{
+    font-family: 'Sofia-Pro';
+    color: black;
+    margin: 0 1rem;
+    margin-top: 1rem;
+}
+.btn-cont-aceptar-pedido{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1.6rem;
+}
+.aceptar-pedido button{
+    background-color: #FFFFFF;   
+    width: 100%;
+    height: 43px;
+    border: none;
+    border-top: 2px solid #d4d4d4;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    cursor: pointer;
+}
+.formulario-date{
+    width: 100%;
+    height:30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ancho-llegada{
+    width: 80%;
+    margin-left: 0;
+    font-family: 'Sofia-Pro';
+    color: black;
+}
+.filtro-viajes{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+@media (min-width:1900px){
+    .aceptar-pedido{
+        top: -30%;
+    }
+    .info-viaje{
+        width: 55vw;
+        height: 45vh;
+    }
+
+    .des-product{
+        margin: 1rem;
+    }
+    .des-product h5{
+        font-size: 1.2rem;
+    }
+    .des-product p{
+        font-size: 1rem;
+    }
+    .url-product h5{
+        font-size: 1.2rem;
+    }
+    .url-product p{
+        font-size: 1rem;
+    }
+    .realizar-viaje h2{
+        font-family: 'Sofia-Pro';
+        font-weight: bold;
+        font-size: 3rem;
+        color: white;
+        margin: 2rem;
+        margin-top: 4rem;
+    }
+    .table{
+        height: 12vw;
+       
+    }
+    td, th{
+        font-size: 1.1rem;
+    }
+    .paginator{
+        font-size: 1.1rem;
+    }
+}

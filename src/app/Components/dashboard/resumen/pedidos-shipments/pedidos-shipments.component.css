@@ -1,0 +1,590 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+.pendientes{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+@font-face {
+    font-family: "Sofia-Pro";
+    src: url("../../../../../assets/Fonts/sofiapro-light.otf");
+}
+.realizar-viaje{
+    position: relative;
+    width: 100%;
+
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.relaizar-viaje-filtro{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.realizar-viaje h2{
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    margin-top: 1rem;
+}
+.table{
+    width: 90%;
+    height: 20vh;
+    font-family: 'Sofia-Pro';
+}
+.filtro-cont{
+    width: 100%;
+}
+.table-cont{
+    width: 100%;
+    display: flex;
+    box-shadow: none;
+    align-items: center;
+    flex-direction: column;
+}
+.paginator{
+    width: 90%;
+    background-color: rgba(89, 129, 145, 0.568);
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    color: black;
+}
+.filtro{
+    width: 20%;
+    margin-left: 5%;
+    font-family: 'Sofia-Pro';
+    color: black;
+}
+.mat-form-field-ripple{
+    background-color: white !important;
+}
+#mat-tab-content-0-2 > div > app-realizar-viaje > div > mat-form-field > div > div.mat-form-field-underline.ng-tns-c124-16.ng-star-inserted{
+    background-color: white !important;
+}
+.mat-form-field-appearance-standard .mat-form-field-underline{
+    background-color: red !important;
+}
+.mat-form-field .mat-focused .mat-form-field-ripple{
+    background-color: red !important;
+}
+td, th {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+.info-viaje{
+    border: 3px solid black;
+    position: absolute;
+    margin: auto;
+    top: 9vh;
+    left: 0;
+    right: 0;
+    width: 60vw;
+    height: 65vh;
+    font-family: 'Sofia-Pro';
+}
+.perfil-img img{
+    width: 80px;
+    height: 80px    ;
+    margin-bottom: 2rem;
+    border-radius: 3rem;
+}
+.title,.sub-title{
+    margin-left: 2rem;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+.title{
+    display: flex;
+    align-items: center;
+    
+}
+.title p{
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    text-decoration:underline;
+    color: skyblue;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.sub-title{
+    margin-left: 1.8rem !important;
+    display: flex;
+    align-items: center;
+}
+.des-product{
+    display: flex;
+    align-items: center;
+    margin:0.5rem;
+ 
+}
+.btn-info-ped{
+    width: 160px;
+    background-color: skyblue;
+    font-family: 'Sofia-Pro';
+    border-radius: 2rem;
+    height: 45px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.cont h4{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    margin-top: 0.5rem;
+    font-size: 1.3rem !important;
+}
+.des-product h5{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.sub-title p{
+    margin-bottom: 0;
+}
+.url-product{
+    display: flex;
+    align-items: center;
+    width: 180%;
+    overflow-x: scroll;
+    margin:0.5rem;
+}
+.url-product h5{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.cont-prin-prod{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+.header-card{
+    position: relative;
+}
+.cont-btn-card{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+.cont-btn-card button{
+    margin: 0.5rem;
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    cursor: pointer;
+    border-radius: 2rem;
+    background: rgba(164, 215, 235, 0.788);
+}
+.pago-pedido{
+    width: 70vw;
+    height: 70vh;
+    background-color: rgb(239, 238, 241);
+    position: absolute;
+    left: 0;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    align-items: center;
+    justify-items: center;
+}
+.pago-pedido div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-details{
+    width: 80%;
+    height: 80% ;
+    background-color: white;
+    border-radius: 0.2rem;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+.form-pay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.ancho{
+    width: 90%;
+    font-family: 'Sofia-Pro';
+
+}
+.datos-pequeños{
+   display: grid;
+   grid-template-columns: 0.35fr 0.35fr 0.35fr;
+    height: 10vh;
+   width: 90%;
+   
+}
+.menor-data{
+    width: 10.5vw;
+    height: 100%;
+    display: flex;
+    font-family: 'Sofia-Pro';
+    justify-content: left;
+  
+}
+.img-cont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filtro-pay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.button-cont-pay{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+}
+.btn-one{
+    width: 90%;
+    margin-right: 5%;
+    height: 40px;
+    border-radius: 0.2rem;
+    border: none;
+    background:linear-gradient(rgba(0, 170, 241, 1),rgba(0, 168, 241, 1));
+    cursor: pointer;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+}
+.btn-two{
+    width: 60%;
+    height: 40px;
+    border-radius: 0.2rem;
+    border: 2px solid rgba(0, 168, 241, 1);
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+}
+.payment-details h3{
+    margin-bottom: 1rem;
+    font-size:1.5rem;
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+
+}
+.title-pay{
+    width: 90%;
+    display: flex;
+    justify-content: left !important;
+    
+}
+.confirmacion-psw{
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    align-items: center;
+
+    background-color: #FFFFFF;
+    width: 300px;
+    height: 270px;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+}
+.confirmacion-psw h3{
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Sofia-Pro';
+    margin: 1rem;
+}
+.confirmacion-psw p{
+    text-align: center;
+}
+.cont-button{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+   
+}
+.cont-button button{
+    background-color: #FFFFFF;
+    border: none;
+    border-top: 2px solid #d4d4d4;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+}
+.filtro-psw{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.msg-validation{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 210px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    border-radius: 1rem;
+}
+.msg-validation h3{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1.1rem;
+    margin: 1.2rem;
+}
+.msg-validation p{
+   
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 1.2rem;
+}
+.msg-validation button{
+    margin-top: 1.3rem;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 0rem 0rem 1rem 1rem;
+    border: none;
+    color: skyblue;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid #d4d4d4;
+   
+}
+.msg-validation button:hover{
+    background: rgba(182, 181, 181, 0.35);
+ 
+}
+.msg-validation-aviso{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 190px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    border-radius: 1rem;
+}
+.msg-validation-aviso h3{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1.1rem;
+    margin: 1.2rem;
+}
+.msg-validation-aviso p{
+   
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 1.2rem;
+}
+.msg-validation-aviso button{
+    margin-top: 1.3rem;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 0rem 0rem 1rem 1rem;
+    border: none;
+    color: skyblue;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid #d4d4d4;
+   
+}
+.msg-validation-aviso button:hover{
+    background: rgba(182, 181, 181, 0.35);
+ 
+}
+.cancelacion-pedido{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10%;
+    left: 40%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 230px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    border-radius: 1rem;
+}
+.cancelacion-pedido h3{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1.1rem;
+    margin: 1.2rem;
+}
+.cancelacion-pedido p{
+   
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 1.2rem;
+}
+.cancelacion-pedido button{
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+ 
+    border: none;
+   
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid #d4d4d4;
+   
+}
+.cancelacion-pedido button:hover{
+    background: rgba(182, 181, 181, 0.35);
+ 
+}
+.msg-validation-aviso{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 190px;
+    background-color: #FFFFFF;
+    z-index: 11;
+    border-radius: 1rem;
+}
+.msg-validation-aviso h3{
+    font-weight: bold;
+    font-family: 'Sofia-Pro';
+    font-size: 1.1rem;
+    margin: 1.2rem;
+}
+.msg-validation-aviso p{
+   
+    font-family: 'Sofia-Pro';
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 1.2rem;
+}
+.msg-validation-aviso button{
+    margin-top: 1.3rem;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 0rem 0rem 1rem 1rem;
+    border: none;
+    color: skyblue;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid #d4d4d4;
+   
+}
+.msg-validation-aviso button:hover{
+    background: rgba(182, 181, 181, 0.35);
+ 
+}
+@media (min-width:1900px){
+    .info-viaje{
+        width: 55vw;
+        height: 45vh;
+    }
+
+    .des-product{
+        margin: 1rem;
+    }
+    .des-product h5{
+        font-size: 1.2rem;
+    }
+    .des-product p{
+        font-size: 1rem;
+    }
+    .url-product h5{
+        font-size: 1.2rem;
+    }
+    .url-product p{
+        font-size: 1rem;
+    }
+    .realizar-viaje h2{
+        font-family: 'Sofia-Pro';
+        font-weight: bold;
+        font-size: 3rem;
+        color: white;
+        margin: 2rem;
+        margin-top: 4rem;
+    }
+    .realizar-viaje h2{
+        font-family: 'Sofia-Pro';
+        font-weight: bold;
+        font-size: 3rem;
+        color: white;
+        margin: 2rem;
+        margin-top: 4rem;
+    }
+    .table{
+        height: 12vw;
+       
+    }
+    td, th{
+        font-size: 1.1rem;
+    }
+    .paginator{
+        font-size: 1.1rem;
+    }
+}

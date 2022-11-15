@@ -1,0 +1,94 @@
+<div class="change-data">
+    <form class="form1" [formGroup]="editData" >
+        <h3>Cambia tus datos personales:</h3>
+        <mat-form-field appearance="legacy" class="ancho-new">
+            <mat-label>Ingresa tu correo</mat-label>
+            <input formControlName="usuario" matInput placeholder="example@gmail.com">
+            <mat-icon  style="color: rgba(97, 192, 247, 0.966);" matSuffix>email</mat-icon>
+        
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="ancho-new">
+            <mat-label>Ingresa tu telefono</mat-label>
+            <input formControlName="telefono" matInput placeholder="999999999">
+            <mat-icon  style="color: rgba(97, 192, 247, 0.966);" matSuffix>call</mat-icon>
+      
+        </mat-form-field>
+        <mat-form-field class="ancho-new" appearance="legacy">
+          <mat-label>Pais</mat-label>
+          <mat-select  formControlName="pais" style="font-family: 'SofiaPro';">
+     
+          <mat-optgroup style="font-family: 'SofiaPro';" *ngFor="let group of paisesGroup" [label]="group.name"
+                        [disabled]="group.disabled">
+            <mat-option  *ngFor="let pais of group.pais
+            " [value]="pais.value">
+              {{pais.viewValue}}
+            </mat-option>
+          </mat-optgroup>
+          </mat-select>
+      </mat-form-field>
+        <button type="button" (click)="filtroDisplay='flex';confirmacion=true;editUser(); " class="edit-button" [disabled]="editData.invalid">Editar</button>
+   
+    </form>
+    <div class="contraseña-change">
+    <h3>Cambia tu contraseña:</h3>
+    <mat-stepper class="stepper" #stepper>
+        <mat-step>
+          <form [formGroup]="editPsw1">
+            <ng-template matStepLabel>Ingresa tu contraseña actual</ng-template>
+            <mat-form-field aria-autocomplete="none" appearance="legacy" class="ancho-psw" style="font-family: 'Sofia-Pro';">
+                <mat-label>Ingresa tu contraseña</mat-label>
+                <input formControlName="psw1" autocomplete="off" matInput [type]="hide ? 'password' : 'text'">
+                <button style="background-color: transparent; border:none;outline:none; cursor:pointer" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div class="btn-cont-psw">
+                <button (click)="validatePassword()"  class="btn-step" >Validar</button>
+                <button  [disabled]="validated" class="btn-step" matStepperNext>Siguiente</button>
+              </div>
+             
+            </form>
+        </mat-step>
+        <mat-step >
+          <form [formGroup]="editPsw2">
+            <ng-template matStepLabel>Ingresa la nueva contraseña</ng-template>
+            <mat-form-field appearance="legacy" class="ancho-psw" style="font-family: 'Sofia-Pro';">
+                <mat-label>Ingresa tu contraseña</mat-label>
+                <input formControlName="psw2" matInput [type]="hide ? 'password' : 'text'">
+                <button style="background-color: transparent; border:none;outline:none; cursor:pointer" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            <div class="btn-cont-psw">
+              <button class="btn-step" mat-button matStepperPrevious>Atrás</button>
+              <button [disabled]="validated" (click)="changePassword()" class="btn-step" mat-button matStepperNext>Guardar</button>
+            </div>
+          </form>
+        </mat-step>
+    
+      </mat-stepper>
+      
+    </div>
+    
+</div>
+<div class="filtro-profile-edit" [ngStyle]="{'display':filtroDisplay}"></div>
+<div class="confirmacion" *ngIf="confirmacion">
+  <h3>Aviso</h3>
+  <h3>¿Desea realizar los cambios a sus datos?</h3>
+  <div class="btn-confirmacion">
+    <button (click)="editUser();confirmacion=false;filtroDisplay='none'" style="color:skyblue;border-radius: 0rem 0rem 0rem 0rem">Aceptar</button>
+    <button (click)="confirmacion=false; filtroDisplay='none'" >Cancelar</button>
+   
+  </div>
+  
+</div>
+<div class="confirmacion" *ngIf="confirmacion_psw">
+  <h3>Aviso</h3>
+  <h3 style="margin-bottom: 1.2rem;">Se ha cambiado su contraseña con exito</h3>
+  <div class="btn-confirmacion" style="margin-top: 1rem;">
+    <button (click)="recargar(); confirmacion_psw=false;filtroDisplay='none'" style="color:skyblue; height: 57px;">Aceptar</button>
+    
+   
+  </div>
+  
+</div>

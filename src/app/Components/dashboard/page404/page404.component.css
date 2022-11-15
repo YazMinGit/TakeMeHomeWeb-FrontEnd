@@ -1,0 +1,57 @@
+@font-face {
+    font-family: SofiaPro;
+    src: url('../../../../assets/Fonts/SofiaProLight.ttf');
+}
+.container{
+
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+    
+}
+.navbar{
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.719);
+    position: absolute;
+    top: 0;
+    height: 100px;
+}
+.navbar img{
+    width: 150px !important;
+    margin: 0 !important;
+}
+h1{
+    font-family: SofiaPro;
+    color: white;
+    font-size: 2rem;
+    margin: 1.5rem;
+    font-weight: bold;
+
+}
+h2{
+    font-family: SofiaPro;
+    color: rgb(33, 72, 119);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    font-weight: bold; 
+}
+button{
+    width: 180px;
+    height: 50px;
+    border-radius: 1rem;
+    font-family:SofiaPro;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    background:linear-gradient(rgba(0, 170, 241, 1),rgba(0, 168, 241, 1));
+    color: white;
+}
+img{
+    margin-top: 3rem;
+    width: 50%;
+}

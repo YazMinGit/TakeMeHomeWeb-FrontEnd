@@ -1,0 +1,88 @@
+.presentacion{
+    width: 100vw;
+
+    height: calc(100vh - 180px);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    align-items: center;
+
+    justify-items: center;
+}
+.cont-principal{
+    width: 80%;
+    height: 65vh;
+    background-color: rgba(255, 255, 255, 0.685);
+    padding: 15px;
+    
+ 
+}
+.carousel{
+    width: 38vw;
+    height: 55vh;
+}
+.picsum-img-wrapper{
+    width: 38vw;
+    height: 55vh;
+}
+.picsum-img-wrapper img{
+    width: 38vw;
+    height: 55vh;
+    filter:brightness(0.5)
+}
+.carousel-caption{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    z-index: 10;
+}
+.carousel-caption h3{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Sofia-Pro';
+    color: white;
+}
+.like{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.like h3{
+    font-family: 'Sofia-Pro';
+    color: black;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+@media (min-width:1900px){
+    .carousel-caption h3{
+        font-size: 2rem;
+    }
+    .like{
+        margin-top: 1rem;
+        
+    }
+    .like h3{
+        font-size: 2rem;
+    }
+    .cont-principal{
+        height: 60vh;
+    }
+    .carousel{
+        height: 52vh;
+    }
+    .picsum-img-wrapper{
+        
+        height: 52vh;
+    }
+    .picsum-img-wrapper img{
+        width: 38vw;
+        height: 55vh;
+        filter:brightness(0.5)
+    }
+}

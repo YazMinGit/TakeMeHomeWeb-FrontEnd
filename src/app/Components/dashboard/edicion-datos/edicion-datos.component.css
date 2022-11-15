@@ -1,0 +1,177 @@
+.change-data{
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    height: 100%;
+    width: 100%;
+}
+.form1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.form1 h3{
+    font-family: 'Sofia-Pro';
+    margin: 0.2rem;
+    font-weight: bold;
+
+}
+.edit-button{
+    display: flex;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    background-color: rgba(97, 192, 247, 0.5);;
+    border: none;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+
+    border: 2px solid black;
+
+    cursor: pointer;
+}
+.ancho-new{
+    width: 80%;
+    font-family: 'Sofia-Pro';
+    margin: 0 !important;
+}
+.contraseña-change{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.contraseña-change h3{
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+}
+.btn-step{
+    display: flex;
+    font-family: 'Sofia-Pro';
+    font-weight: bold;
+    background-color: rgba(97, 192, 247, 0.5);
+    border: none;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    
+    border: 2px solid black;
+
+    cursor: pointer;
+}
+.btn-cont-psw{
+    display: flex;
+}
+.btn-cont-psw button{
+    margin-right: 1rem;
+}
+.ancho-psw{
+    margin-top: 1rem;
+    width: 50%;
+}
+.mat-step-icon{
+    background-color: rgba(97, 192, 247, 0.5) !important;
+}
+.mat-step-text-label {
+    font-family: 'Sofia-Pro';
+}
+.stepper{
+    width: 87%; 
+}
+.confirmacion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height:200px;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+  
+    display: flex;
+   
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+
+}
+.btn-confirmacion{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.1rem;
+}
+.confirmacion h3{
+    font-family: 'Sofia-Pro';
+    margin: 0.5rem 1rem;
+}
+.confirmacion button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-top: 2px solid #d4d4d4;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    font-family: 'Sofia-Pro';
+    background-color: white;
+    cursor: pointer;
+}
+.confirmacion button:hover{
+    background: rgba(182, 181, 181, 0.35)
+}
+.filtro-profile-edit{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    z-index: 7;
+}
+@media (min-width:1900px){
+    .form1 h3,.contraseña-change h3{
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+    .ancho-new{
+        font-size: 1.2rem;
+        
+        margin: 0.5rem !important;
+    }
+    .edit-button{
+        margin: 1rem;
+        width: 140px;
+        font-size: 1.2rem;
+        height: 50px;
+    }
+    .btn-step{
+        margin: 1rem;
+        margin-left: 0;
+        width: 140px;
+        font-size: 1.2rem;
+        height: 40px;
+    }
+    .ancho-psw{
+        font-size: 1.2rem;
+        margin:1rem 0; 
+    }
+  
+    .mat-step-text-label{
+        font-size: 1.2rem;
+        font-weight: bold;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+    }
+}

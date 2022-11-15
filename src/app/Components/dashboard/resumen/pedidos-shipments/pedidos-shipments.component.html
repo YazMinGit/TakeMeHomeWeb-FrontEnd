@@ -1,0 +1,206 @@
+<div class="pendientes">
+   
+    <div class="realizar-viaje">
+        <div class="relaizar-viaje-filtro" [ngStyle]="{'display':filtro}"></div>
+        <h2>Pedidos en Progreso</h2>
+        <p>Aquí se visualizarán los pedidos ya aceptados y puede realizar los pagos.</p>
+        <div class="filtro-cont">
+          <mat-form-field class="filtro" appearance="standard">
+            <mat-label>Filtro</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Por país, ciudad, fecha, producto, etc" #input>
+          </mat-form-field>
+        </div>
+          
+          <div class="mat-elevation-z8 table-cont">
+            <table mat-table matSort [dataSource]="dataSource"  class="table" >
+          
+              <!-- ID Column -->
+              <ng-container matColumnDef="originCountry">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Pais de origen </th>
+                <td mat-cell *matCellDef="let row"> {{row.originCountry}} </td>
+              </ng-container>
+              
+          
+              <!-- Progress Column -->
+              <ng-container matColumnDef="destinationCountry">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Pais de destino </th>
+                <td mat-cell *matCellDef="let row"> {{row.destinationCountry}} </td>
+              </ng-container>
+              <ng-container matColumnDef="destinationCity">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Ciudad de destino </th>
+                <td mat-cell *matCellDef="let row"> {{row.destinationCity}} </td>
+              </ng-container>
+          
+              <!-- Name Column -->
+              <ng-container matColumnDef="limitDate" >
+                <th mat-header-cell *matHeaderCellDef mat-sort-header > Fecha Limite </th>
+                <td mat-cell *matCellDef="let row"> {{row.limitDate | date}} </td>
+              </ng-container>
+          
+              <!-- Fruit Column -->
+              <ng-container matColumnDef="nameProduct">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let row"> {{row.nameProduct}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef > Visualizar </th>
+                <td mat-cell *matCellDef="let row"><mat-icon style="cursor: pointer;" (click)="Informacion(row.id)">remove_red_eye</mat-icon></td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">Datos no encontrados con "{{input.value}}"</td>
+              </tr>
+            </table>
+            <mat-paginator class="paginator" [pageSizeOptions]="[size]" aria-label="Select page of users"></mat-paginator>
+          
+          </div>
+            <mat-card *ngIf="informacion" class="example-card info-viaje">
+              <mat-card-header class="header-card">
+                <div class="cont-btn-card">
+                  <button (click)="paymentDetail=true">Pagar Pedido</button>
+                  <button (click)="cancelandoPedido=true" >Cancelar Pedido</button>
+                  <button (click)="Cerrar()">Cerrar Pedido</button>
+                </div>
+                <div mat-card-avatar class="example-header-image perfil-img">
+                  <img src={{oderSelect.shipment.user.urlImage}}>
+                </div>
+                <mat-card-title class="title">{{oderSelect.shipment.user.name}}<p (click)="showInfoUser(oderSelect.shipment.user.id)">Ver información</p></mat-card-title>
+                <mat-card-subtitle class="sub-title"><mat-icon class="icon-lugar" style="color: rgba(97, 192, 247, 0.966); margin-right: 0.1rem;">room</mat-icon><p>{{oderSelect.destinationCountry}}</p><p>-{{oderSelect.destinationCity}}</p><p>-{{oderSelect.destinationAddress}}</p></mat-card-subtitle>
+              </mat-card-header>
+            
+              <mat-card-content class="cont" [ngStyle]="{display:displayInfoPro }">
+                <h4>Descripción del Producto:</h4>
+                <div class="cont-prin-prod">
+                <div class="des-product">
+                  <h5>País de Origen: </h5><p>{{oderSelect.originCountry}}</p>
+                </div>
+                <div class="des-product">
+                  <h5>Ciudad de Origen: </h5><p>{{oderSelect.originCity}}</p>
+                </div>
+              </div>
+              <div class="cont-prin-prod">
+                <div class="des-product">
+                  <h5>Nombre del Producto: </h5><p>{{oderSelect.nameProduct}}</p>
+                </div>
+                <div class="des-product">
+                  <h5>Categoría del Producto: </h5><p>{{oderSelect.categoryProduct}}</p>
+                </div>
+              </div>
+                <div class="cont-prin-prod">
+                <div class="des-product">
+                  <h5>Dimensiones del Producto: </h5><p>{{oderSelect.dimensionsProduct}}</p>
+                </div>
+                <div class="des-product">
+                  <h5>Precio del Producto: </h5><p>${{oderSelect.priceProduct}} + $30 de envio</p>
+                </div>
+                
+                <div class="url-product" >
+                  <h5>Url del Producto: </h5><p>{{oderSelect.urlProduct}}</p>
+                </div>
+               
+                
+              </div>
+              </mat-card-content>
+            
+            </mat-card>
+          
+    </div>
+</div>
+<div class="filtro-pay" *ngIf="paymentDetail" >
+
+</div>
+<div class="pago-pedido" *ngIf="paymentDetail">
+  <div class="img-cont">
+    <img src="../../../../../assets/Images/tarjeta.png">
+  </div>
+  <div class="payment-details" >
+    <div class="title-pay">
+      <h3>Detalles de pago</h3>
+    </div>
+      <form [formGroup]="payForm" class="form-pay">
+      <mat-form-field class="ancho" appearance="fill">
+          <mat-label>Numero de tarjeta</mat-label>
+          <input type="number"  formControlName="cardNumber" autocomplete="off" matInput>
+          <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix> credit_card</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Nombre del propietario</mat-label>
+        <input type="text" formControlName="cardHolderName" autocomplete="off" matInput>
+        <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix> account_circle</mat-icon>
+    </mat-form-field>
+      <div class="datos-pequeños" >
+          <div class="menor-data">
+            <mat-form-field class="ancho" appearance="fill">
+              <mat-label>Mes de Vencimiento</mat-label>
+              <input formControlName="month" type="number" maxlength="2"  autocomplete="off" matInput>
+              <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix> today</mat-icon>
+          </mat-form-field>
+          </div>
+          <div class="menor-data">
+            <mat-form-field class="ancho" appearance="fill">
+              <mat-label>Año de Vencimiento</mat-label>
+              <input formControlName="year" type="number" maxlength="4" autocomplete="off" matInput>
+              <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix> today</mat-icon>
+          </mat-form-field>
+          </div>
+          <div class="menor-data">
+            <mat-form-field class="ancho" appearance="fill">
+              <mat-label>CVV</mat-label>
+              <input formControlName="cvv" type="number"  autocomplete="off" matInput>
+              <mat-icon  style="color: rgba(41, 127, 177, 0.966);" matSuffix> security</mat-icon>
+          </mat-form-field>
+          </div>
+      </div>
+      <div class="button-cont-pay">
+        <button class="btn-one" (click)="pswConfirm=true" [disabled]="payForm.invalid">CONFIRMAR Y PAGAR ${{oderSelect.priceProduct+30}}</button>
+        <button (click)="paymentDetail=false" class="btn-two" >CANCELAR</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="confirmacion-psw" *ngIf="pswConfirm">
+  <h3>Aviso</h3>
+  <p>Por temas de seguridad requerimos la contraseña de la cuenta</p>
+  <form [formGroup]="passwordForm">
+    <mat-form-field appearance="fill" style="font-family: 'Sofia-Pro';">
+      <mat-label>Enter your password</mat-label>
+      <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+      <button style="border: none;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  <div class="cont-button">
+    <button (click)="editShipment(oderSelect.shipment.id);pswConfirm=false;" style="color:skyblue; font-weight: bold;" [disabled]="passwordForm.invalid">Ingresar</button>
+    <button (click)="pswConfirm=false"  style="border-radius: 0rem 0rem 1rem 1rem;">Cancelar</button>
+  </div>
+</div>
+<div class="filtro-psw" *ngIf="pswConfirm">
+
+</div>
+<div class="filtro-psw" *ngIf="avisoExito"></div>
+<div class="filtro-psw" *ngIf="avisoError"></div>
+<div class="filtro-psw" *ngIf="cancelandoPedido"></div>
+<div class="msg-validation-aviso" *ngIf="avisoExito" >
+  <h3>Aviso</h3>
+  <p>Su pago ha sido realizado con exito</p>
+  <button (click)="refrescar()">Aceptar</button>
+</div>
+<div class="msg-validation" *ngIf="avisoError"  >
+  <h3>Alerta</h3>
+  <p>El pago no procederá por que su contraseña es incorrecta</p>
+  <button (click)="avisoError=false">Aceptar</button>
+</div>
+<div class="cancelacion-pedido" *ngIf="cancelandoPedido">
+  <h3>Aviso</h3>
+  <p>¿Esta seguro de cancelar el pedido?</p>
+  <div class="cont-button">
+    <button (click)="cancelarPedido(oderSelect.shipment.id, oderSelect.shipment.user.id);cancelandoPedido=false;" style="color:skyblue; font-weight: bold;" >Cancelar</button>
+    <button (click)="cancelandoPedido=false"  style="border-radius: 0rem 0rem 1rem 1rem;">Cerrar</button>
+  </div>
+</div>

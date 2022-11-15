@@ -1,0 +1,52 @@
+<div class="presentacion">
+	<div class="cont-principal">
+		<ngb-carousel
+		#carousel
+		[interval]="5000"
+	
+		
+	>
+		<ng-template ngbSlide *ngFor="let img of images; index as i">
+			<div class="carousel-caption">
+				<h3>{{texto[i]}}</h3>
+			</div>
+			<a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+				<div class="picsum-img-wrapper">
+					<img [src]="img" alt="My image {{i + 1}} description" />
+				</div>
+			</a>
+		</ng-template>
+	</ngb-carousel>
+	<div class="like">
+		<h3>Como cliente</h3>
+	</div>
+	</div>
+	<div class="cont-principal">
+		<ngb-carousel
+		#carousel
+		[interval]="5000"
+	
+	
+	>
+		<ng-template ngbSlide *ngFor="let img of images2; index as i">
+			<div class="carousel-caption">
+				<h3>{{texto2[i]}}</h3>
+			</div>
+			<a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+				<div class="picsum-img-wrapper">
+					<img style="filter:brightness(0.5)" [src]="img" alt="My image {{i + 1}} description" />
+				</div>
+			</a>
+		</ng-template>
+	</ngb-carousel>
+	<div class="like">
+		<h3>Como viajero</h3>
+	</div>
+	</div>
+</div>
+
+
+
+
+
+
