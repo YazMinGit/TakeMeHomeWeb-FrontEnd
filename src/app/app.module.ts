@@ -4,54 +4,87 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EntrypageComponent } from './components/entrypage/entrypage.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SecondarynavbarComponent } from './components/entrypage/secondarynavbar/secondarynavbar.component';
-import { RegisterloginComponent } from './components/entrypage/registerlogin/registerlogin.component';
-import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
-import { MainpageComponent } from './components/dashboard/mainpage/mainpage.component';
-import { SharedModule } from './shared/shared.module';
-import { NotificationsComponent } from './components/dashboard/notifications/notifications.component';
-import { ConfigurationsliderComponent } from './Components/dashboard/configurationslider/configurationslider.component';
+import { MainComponent } from './components/dashboard/main/main.component';
+import { SharedModule } from './components/shared/shared.module';
+import { PresentationComponent } from './components/dashboard/presentation/presentation.component';
+import { RealizarPedidoComponent } from './components/dashboard/realizar-pedido/realizar-pedido.component';
+import { RealizarViajeComponent } from './components/dashboard/realizar-viaje/realizar-viaje.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
-import { LandpageComponent } from './components/landpage/landpage.component';
-import { PresentationComponent } from './components/landpage/presentation/presentation.component';
-import { AboutusComponent } from './components/landpage/aboutus/aboutus.component';
-import { PasosComponent } from './components/landpage/pasos/pasos.component';
-import { BeneficiosComponent } from './components/landpage/beneficios/beneficios.component';
-import { ComentariosComponent } from './components/landpage/comentarios/comentarios.component';
-import { FooterComponent } from './components/landpage/footer/footer.component';
-import { ResumenComponent } from './Components/dashboard/resumen/resumen.component';
-
-import { HistorialdepagosComponent } from './components/dashboard/historialdepagos/historialdepagos.component';
-import { SoporteComponent } from './Components/dashboard/soporte/soporte.component';
-import { RealizarpedidoComponent } from './components/dashboard/realizarpedido/realizarpedido.component';
-import { RealizarviajeComponent } from './components/dashboard/realizarviaje/realizarviaje.component';
-import { HistorialentregasComponent } from './components/dashboard/historialentregas/historialentregas.component';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
+import { ServiciosComponent } from './components/dashboard/servicios/servicios.component';
+import { EdicionDatosComponent } from './components/dashboard/edicion-datos/edicion-datos.component';
+import { ComentariosComponent } from './components/dashboard/comentarios/comentarios.component';
+import { ReclamosComponent } from './components/dashboard/reclamos/reclamos.component';
+import { SoporteComponent } from './components/dashboard/soporte/soporte.component';
+import { ResumenComponent } from './components/dashboard/resumen/resumen.component';
+import { EntrypageComponent } from './components/entrypage/entrypage.component';
+import { LoginComponent } from './components/entrypage/login/login.component';
+import { RegisterComponent } from './components/entrypage/register/register.component';
+import { SecondaryNavbarComponent } from './components/entrypage/secondary-navbar/secondary-navbar.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { AboutusComponent } from './components/landing-page/aboutus/aboutus.component';
+import { BeneficiosComponent } from './components/landing-page/beneficios/beneficios.component';
+import { FooterComponent } from './components/landing-page/footer/footer.component';
+import { PasosComponent } from './components/landing-page/pasos/pasos.component';
+import { PresentacionComponent } from './components/landing-page/presentacion/presentacion.component';
+import { ComentariosLandingComponent } from './components/landing-page/comentarios-landing/comentarios-landing.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { MispedidosComponent } from './components/dashboard/resumen/mispedidos/mispedidos.component';
+import { PedidosPendientesComponent } from './components/dashboard/resumen/pedidos-pendientes/pedidos-pendientes.component';
+import { PedidosShipmentsComponent } from './components/dashboard/resumen/pedidos-shipments/pedidos-shipments.component';
+import { EntregasNoPagadasComponent } from './components/dashboard/resumen/entregas-no-pagadas/entregas-no-pagadas.component';
+import { EntregasPagadasComponent } from './components/dashboard/resumen/entregas-pagadas/entregas-pagadas.component';
+import { ProfileCustomerComponent } from './components/dashboard/profile-customer/profile-customer.component';
+import { CommentsCustomerComponent } from './components/dashboard/comments-customer/comments-customer.component';
+import { ReclamosCustomerComponent } from './components/dashboard/reclamos-customer/reclamos-customer.component';
+import { RealizarComentariosReclamosComponent } from './components/dashboard/realizar-comentarios-reclamos/realizar-comentarios-reclamos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PedidosPagadosComponent } from './components/dashboard/resumen/pedidos-pagados/pedidos-pagados.component';
+import { Page404Component } from './components/dashboard/page404/page404.component';
+import { HistorialClienteComponent } from './components/dashboard/resumen/historial-cliente/historial-cliente.component';
+import { HistorialCourrierComponent } from './components/dashboard/resumen/historial-courrier/historial-courrier.component';
+import { PdfCourrierComponent } from './components/dashboard/resumen/historial-courrier/pdf-courrier/pdf-courrier.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    EntrypageComponent,
     DashboardComponent,
-    SecondarynavbarComponent,
-    RegisterloginComponent,
-    NavbarComponent,
-    MainpageComponent,
-    NotificationsComponent,  
-   ConfigurationsliderComponent, ProfileComponent, 
-   LandpageComponent, 
-   PresentationComponent, 
-   AboutusComponent, 
-   PasosComponent, 
-   BeneficiosComponent, 
-   ComentariosComponent, 
-   FooterComponent, ResumenComponent , HistorialdepagosComponent, SoporteComponent, RealizarpedidoComponent, RealizarviajeComponent, HistorialentregasComponent, MispedidosComponent,
+    MainComponent,
+    PresentationComponent,
+    RealizarPedidoComponent,
+    RealizarViajeComponent,
+    ProfileComponent,
+    ServiciosComponent,
+    EdicionDatosComponent,
+    ComentariosComponent,
+    ReclamosComponent,
+    SoporteComponent,
+    ResumenComponent,
+    EntrypageComponent,
+    LoginComponent,
+    RegisterComponent,
+    SecondaryNavbarComponent,
+    LandingPageComponent,
+    AboutusComponent,
+    BeneficiosComponent,
+    FooterComponent,
+    PasosComponent,
+    PresentacionComponent,
+    ComentariosLandingComponent,
+    PedidosPendientesComponent,
+    PedidosShipmentsComponent,
+    EntregasNoPagadasComponent,
+    EntregasPagadasComponent,
+    ProfileCustomerComponent,
+    CommentsCustomerComponent,
+    ReclamosCustomerComponent,
+    RealizarComentariosReclamosComponent,
+    PedidosPagadosComponent,
+    Page404Component,
+    HistorialClienteComponent,
+    HistorialCourrierComponent,
+    PdfCourrierComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,9 +92,7 @@ import { MispedidosComponent } from './components/dashboard/resumen/mispedidos/m
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
-    MatPaginatorModule,
- 
-    
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
